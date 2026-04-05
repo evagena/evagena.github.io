@@ -14,8 +14,10 @@ body {
 
 /* ===== BANNER ===== */
 .banner {
-  background: url('banner.jpg') center/cover no-repeat;
-  height: 320px;
+  background: 
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+    url('banner.png') center/cover no-repeat;
+  height: 340px;
   position: relative;
 }
 
@@ -38,6 +40,10 @@ body {
   display: flex;
   align-items: center;
   gap: 30px;
+}
+
+.header h1 {
+  text-shadow: 0 0 10px rgba(0,212,255,0.8);
 }
 
 .header img {
