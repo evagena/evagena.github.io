@@ -1,25 +1,138 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-  <meta charset="UTF-8">
-  <title>Νέλλη Βαγενά</title>
+<meta charset="UTF-8">
+<title>Νέλλη Βαγενά</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #0f2027, #203a43);
+  color: white;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.header img {
+  width: 160px;
+  border-radius: 50%;
+  border: 3px solid #00d4ff;
+}
+
+h1 {
+  margin: 0;
+}
+
+.subtitle {
+  color: #ccc;
+}
+
+section {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  margin-top: 25px;
+  border-radius: 12px;
+}
+
+h2 {
+  color: #00d4ff;
+}
+
+.job {
+  margin-bottom: 20px;
+}
+
+.year {
+  color: #00d4ff;
+  font-weight: bold;
+}
+</style>
+
 </head>
+
 <body>
 
-<h1>Νέλλη Βαγενά</h1>
-<p>Radiation Physics | Geant4 | Monte Carlo Simulations</p>
+<div class="container">
 
-<h2>About</h2>
-<p>Ερευνητής στη φυσική ακτινοβολιών και προσομοιώσεις.</p>
+<div class="header">
+  <img src="photo.jpg">
+  <div>
+    <h1>Νέλλη Βαγενά</h1>
+    <p class="subtitle">Radiation Physics | Geant4 | Monte Carlo Simulations</p>
+  </div>
+</div>
 
+<section>
+<h2>Σχετικά με εμένα</h2>
+<p>
+Είμαι διδάκτωρ Πυρηνικής Φυσικής του Τμήματος Φυσικής του ΑΠΘ, με ερευνητική δραστηριότητα στην πειραματική και υπολογιστική μελέτη πυρηνικών αντιδράσεων, στην αξιολόγηση πυρηνικών δεδομένων και στις εφαρμογές της πυρηνικής φυσικής στην αστροφυσική, τη διαστημική και την ιατρική φυσική.
+</p>
+</section>
+
+<section>
+<h2>Επαγγελματική Εμπειρία</h2>
+
+<div class="job">
+<p class="year">2025 - 2026</p>
+<p><b>IAEA</b> – Ερευνητική Συνεργάτιδα</p>
+<p>R-matrix αναλύσεις για την αντίδραση ¹⁹F(α,n) με χρήση AZURE2 και παραγωγή δεδομένων ENDF-6.</p>
+</div>
+
+<div class="job">
+<p class="year">2023 - 2024</p>
+<p><b>CERN (n-TOF)</b> – Ερευνητική Συνεργάτιδα</p>
+</div>
+
+<div class="job">
+<p class="year">2024 - 2025</p>
+<p><b>Δημόκριτος (XRF Lab)</b> – Μεταδιδακτορική Ερευνήτρια</p>
+<p>Monte Carlo προσομοιώσεις (Geant4) για παραγωγή ακτινοβολίας Χ.</p>
+</div>
+
+<div class="job">
+<p class="year">2019 - 2024</p>
+<p><b>ΙΠΣΦ, Δημόκριτος</b> – Μεταδιδακτορική Ερευνήτρια</p>
+<p>FISPACT-II, ενεργές διατομές και p-process.</p>
+</div>
+
+<div class="job">
+<p class="year">2018</p>
+<p><b>Culham Centre for Fusion Energy (UK)</b></p>
+</div>
+
+<div class="job">
+<p class="year">2016 - 2018</p>
+<p><b>ΑΠΘ</b> – Μεταδιδακτορική Ερευνήτρια</p>
+</div>
+
+</section>
+
+<section>
 <h2>Projects</h2>
 <ul>
-  <li>IFIGENEIA</li>
-  <li>ARTEMIS-CB</li>
+<li>IFIGENEIA</li>
+<li>Hi-MoCaRT</li>
+<li>ENRICH</li>
 </ul>
+</section>
 
+<section>
 <h2>Contact</h2>
-<p>Email: evagena@gmail.com</p>
+<p>Email: <a href="mailto:evagena@auth.gr">evagena@auth.gr</a></p>
+</section>
+
+</div>
 
 </body>
 </html>
