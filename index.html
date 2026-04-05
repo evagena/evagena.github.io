@@ -12,12 +12,28 @@ body {
   color: white;
 }
 
+/* ===== BANNER ===== */
+.banner {
+  background: url('banner.jpg') center/cover no-repeat;
+  height: 300px;
+  position: relative;
+}
+
+.overlay {
+  background: rgba(0,0,0,0.6);
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* ===== CONTAINER ===== */
 .container {
   max-width: 1000px;
   margin: auto;
   padding: 40px;
 }
 
+/* ===== HEADER ===== */
 .header {
   display: flex;
   align-items: center;
@@ -25,7 +41,7 @@ body {
 }
 
 .header img {
-  width: 160px;
+  width: 150px;
   border-radius: 50%;
   border: 3px solid #00d4ff;
 }
@@ -38,6 +54,7 @@ h1 {
   color: #ccc;
 }
 
+/* ===== SECTIONS ===== */
 section {
   background: rgba(255,255,255,0.05);
   padding: 20px;
@@ -57,21 +74,31 @@ h2 {
   color: #00d4ff;
   font-weight: bold;
 }
+
+a {
+  color: #00d4ff;
+}
 </style>
 
 </head>
 
 <body>
 
-<div class="container">
-
-<div class="header">
-  <img src="foto_clean.jpg">
-  <div>
-    <h1>Νέλλη Βαγενά</h1>
-    <p class="subtitle">Radiation Physics | Geant4 | Monte Carlo Simulations</p>
+<!-- ===== BANNER ===== -->
+<div class="banner">
+  <div class="overlay">
+    <div class="container header">
+      <img src="photo.jpg">
+      <div>
+        <h1>Νέλλη Βαγενά</h1>
+        <p class="subtitle">Radiation Physics | Geant4 | Monte Carlo Simulations</p>
+      </div>
+    </div>
   </div>
 </div>
+
+<!-- ===== MAIN CONTENT ===== -->
+<div class="container">
 
 <section>
 <h2>Σχετικά με εμένα</h2>
