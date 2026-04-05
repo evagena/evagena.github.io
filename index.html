@@ -15,7 +15,7 @@ body {
 /* ===== BANNER ===== */
 .banner {
   background: url('banner.jpg') center/cover no-repeat;
-  height: 300px;
+  height: 320px;
   position: relative;
 }
 
@@ -54,6 +54,28 @@ h1 {
   color: #ccc;
 }
 
+/* ===== BUTTONS ===== */
+.buttons {
+  margin-top: 15px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 8px;
+  background: #00d4ff;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: white;
+  transform: scale(1.05);
+}
+
 /* ===== SECTIONS ===== */
 section {
   background: rgba(255,255,255,0.05);
@@ -77,6 +99,11 @@ h2 {
 
 a {
   color: #00d4ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 </style>
 
@@ -92,12 +119,18 @@ a {
       <div>
         <h1>Νέλλη Βαγενά</h1>
         <p class="subtitle">Radiation Physics | Geant4 | Monte Carlo Simulations</p>
+
+        <div class="buttons">
+          <a href="mailto:evagena@auth.gr" class="btn">Contact</a>
+          <a href="#projects" class="btn">Projects</a>
+        </div>
+
       </div>
     </div>
   </div>
 </div>
 
-<!-- ===== MAIN CONTENT ===== -->
+<!-- ===== MAIN ===== -->
 <div class="container">
 
 <section>
@@ -145,12 +178,22 @@ a {
 
 </section>
 
-<section>
+<section id="projects">
 <h2>Projects</h2>
 <ul>
-<li>IFIGENEIA</li>
-<li>Hi-MoCaRT</li>
-<li>ENRICH</li>
+  <li>
+    <a href="https://ifigeneia.eu/" target="_blank">
+      IFIGENEIA – Innovative Facility for Isotope GENeration
+    </a>
+  </li>
+
+  <li>
+    <a href="https://www.cost.eu/actions/CA24131/" target="_blank">
+      ENRICH – European Network for Radiation Detection
+    </a>
+  </li>
+
+  <li>Hi-MoCaRT</li>
 </ul>
 </section>
 
