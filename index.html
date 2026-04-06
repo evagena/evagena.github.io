@@ -5,9 +5,11 @@
 <title>Νέλλη Βαγενά</title>
 
 <style>
+
+/* ===== BASE ===== */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background: #0b0f14;
   color: #e6edf3;
 }
@@ -17,38 +19,31 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(255,255,255,0.95);
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  padding: 20px 50px;
   gap: 30px;
-  padding: 15px;
   z-index: 1000;
 }
 
 .navbar a {
-  color: black;
+  color: #c9d1d9;
   text-decoration: none;
   font-size: 18px;
   transition: 0.2s;
 }
 
 .navbar a:hover {
-  color: #00aaff;
+  color: #00d4ff;
 }
 
 /* ===== BANNER ===== */
 .banner {
-  margin-top: 60px;
-  background: 
-    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)),
-    url('banner.png') center/cover no-repeat;
+  margin-top: 70px;
   height: 340px;
-  position: relative;
-}
-
-.overlay {
-  background: rgba(0,0,0,0.2);
-  height: 100%;
+  background: 
+    linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)),
+    url('banner.png') center/cover no-repeat;
   display: flex;
   align-items: center;
 }
@@ -67,18 +62,19 @@ body {
   gap: 30px;
 }
 
-.header h1 {
-  text-shadow: 0 0 10px rgba(0,212,255,0.8);
+.header img {
+  width: 140px;
+  border-radius: 50%;
+  border: 2px solid #00d4ff;
 }
 
-.header img {
-  width: 150px;
-  border-radius: 50%;
-  border: 3px solid #00d4ff;
+.header h1 {
+  margin: 0;
+  font-size: 36px;
 }
 
 .subtitle {
-  color: #ccc;
+  color: #b0c4cc;
 }
 
 /* ===== BUTTONS ===== */
@@ -87,51 +83,44 @@ body {
 }
 
 .btn {
-  display: inline-block;
-  padding: 10px 20px;
-  margin-right: 10px;
-  border-radius: 8px;
-  background: #00d4ff;
-  color: black;
+  padding: 8px 18px;
+  border-radius: 6px;
+  background: rgba(0,212,255,0.1);
+  border: 1px solid rgba(0,212,255,0.4);
+  color: #00d4ff;
   text-decoration: none;
-  font-weight: bold;
+  margin-right: 10px;
   transition: 0.3s;
 }
 
 .btn:hover {
-  background: white;
-  transform: scale(1.05);
+  background: #00d4ff;
+  color: black;
 }
 
 /* ===== SECTIONS ===== */
 section {
-  background: rgba(255,255,255,0.05);
-  padding: 20px;
-  margin-top: 25px;
-  border-radius: 12px;
+  margin-top: 40px;
 }
 
 h2 {
   color: #00d4ff;
 }
 
+/* ===== JOB ===== */
 .job {
   margin-bottom: 20px;
 }
 
 .year {
   color: #00d4ff;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 a {
   color: #00d4ff;
-  text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
-}
 </style>
 
 </head>
@@ -150,20 +139,18 @@ a:hover {
 
 <!-- ===== BANNER ===== -->
 <div class="banner">
-  <div class="overlay">
-    <div class="container header">
-      <img src="photo.jpg">
-      <div>
-        <h1>Νέλλη Βαγενά</h1>
-        <p class="subtitle">
-          Experimental Nuclear Physics | Radiation Physics | Geant4 | Monte Carlo Simulations
-        </p>
+  <div class="container header">
+    <img src="foto_clean.jpg">
 
-        <div class="buttons">
-          <a href="mailto:evagena@auth.gr" class="btn">Contact</a>
-          <a href="#projects" class="btn">Projects</a>
-        </div>
+    <div>
+      <h1>Νέλλη Βαγενά</h1>
+      <p class="subtitle">
+        Experimental Nuclear Physics | Radiation Physics | Geant4
+      </p>
 
+      <div class="buttons">
+        <a href="mailto:evagena@auth.gr" class="btn">Contact</a>
+        <a href="#projects" class="btn">Projects</a>
       </div>
     </div>
   </div>
@@ -175,58 +162,73 @@ a:hover {
 <section>
 <h2>Σχετικά με εμένα</h2>
 <p>
-Είμαι διδάκτωρ Πυρηνικής Φυσικής του Τμήματος Φυσικής του ΑΠΘ...
+Διδάκτωρ Πυρηνικής Φυσικής με ερευνητική δραστηριότητα σε πειραματική και υπολογιστική μελέτη πυρηνικών αντιδράσεων, αξιολόγηση πυρηνικών δεδομένων και εφαρμογές σε αστροφυσική και ιατρική φυσική.
 </p>
 </section>
 
 <section>
 <h2>Επαγγελματική Εμπειρία</h2>
-<!-- (κρατάς όπως έχεις) -->
+
+<div class="job">
+<p class="year">2025 - 2026</p>
+<p><b>IAEA</b></p>
+</div>
+
+<div class="job">
+<p class="year">2023 - 2024</p>
+<p><b>CERN (n-TOF)</b></p>
+</div>
+
 </section>
 
 <section>
 <h2>Εκπαίδευση</h2>
-<!-- (κρατάς όπως έχεις) -->
+
+<div class="job">
+<p class="year">2010 - 2016</p>
+<p>PhD – ΑΠΘ</p>
+</div>
+
+<div class="job">
+<p class="year">2004 - 2007</p>
+<p>MSc – ΑΠΘ</p>
+</div>
+
 </section>
 
 <section id="projects">
 <h2>Projects</h2>
-<ul>
-  <li><a href="https://ifigeneia.eu/" target="_blank">IFIGENEIA</a></li>
-  <li><a href="https://www.cost.eu/actions/CA24131/" target="_blank">ENRICH</a></li>
-</ul>
-</section>
 
-<!-- ===== NEW SECTIONS ===== -->
+<ul>
+<li><a href="https://ifigeneia.eu/" target="_blank">IFIGENEIA</a></li>
+<li><a href="https://www.cost.eu/actions/CA24131/" target="_blank">ENRICH</a></li>
+</ul>
+
+</section>
 
 <section id="publications">
 <h2>Publications</h2>
-<p>(βάζουμε μετά papers εδώ)</p>
 </section>
 
 <section id="research">
 <h2>Research</h2>
-<p>(Geant4, R-matrix, nuclear data κλπ)</p>
 </section>
 
 <section id="talks">
 <h2>Talks</h2>
-<p>(conferences, presentations)</p>
 </section>
 
 <section id="gallery">
 <h2>Gallery</h2>
-<p>(images από simulations / detectors)</p>
 </section>
 
 <section id="cv">
 <h2>CV</h2>
-<p>(θα βάλουμε PDF ή πλήρες CV)</p>
 </section>
 
 <section>
 <h2>Contact</h2>
-<p>Email: <a href="mailto:evagena@auth.gr">evagena@auth.gr</a></p>
+<p><a href="mailto:evagena@auth.gr">evagena@auth.gr</a></p>
 </section>
 
 </div>
