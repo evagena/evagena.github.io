@@ -2,332 +2,162 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nelli Vagena</title>
 
 <style>
-  body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-    background: #ffffff;
-    color: #111111;
-    line-height: 1.65;
-  }
 
-  .navbar {
-    display: flex;
-    justify-content: center;
-    gap: 34px;
-    padding: 18px 24px;
-    border-bottom: 1px solid #e6e6e6;
-    background: #ffffff;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
+/* ===== BASE ===== */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #ffffff;
+  color: #111;
+  line-height: 1.7;
+}
 
-  .navbar a {
-    text-decoration: none;
-    color: #333333;
-    font-size: 15px;
-  }
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 18px;
+  border-bottom: 1px solid #eee;
+}
 
-  .navbar a:hover {
-    color: #005fcc;
-  }
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
+}
 
-  .container {
-    max-width: 980px;
-    margin: 44px auto 80px;
-    padding: 0 24px;
-  }
+.navbar a:hover {
+  color: #2d6cdf;
+}
 
-  .hero {
-    display: grid;
-    grid-template-columns: 1fr 150px;
-    gap: 36px;
-    align-items: start;
-    margin-bottom: 34px;
-  }
+/* ===== MAIN LAYOUT ===== */
+.container {
+  max-width: 1100px;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 60px;
+}
 
-  .hero h1 {
-    margin: 0 0 8px 0;
-    font-size: 34px;
-    font-weight: 600;
-    line-height: 1.2;
-  }
+/* ===== LEFT PROFILE ===== */
+.left {
+  text-align: center;
+}
 
-  .hero .role {
-    margin: 0 0 8px 0;
-    font-size: 18px;
-    color: #2d2d2d;
-  }
+.left img {
+  width: 220px;
+  border-radius: 50%;   /* 👉 στρογγυλή όπως στο site */
+}
 
-  .hero .subtitle {
-    margin: 0;
-    color: #666666;
-    font-size: 15px;
-  }
+.left h1 {
+  margin: 20px 0 10px;
+  font-size: 30px;
+}
 
-  .hero img {
-    width: 150px;
-    height: auto;
-    border-radius: 6px;
-    display: block;
-  }
+.left .subtitle {
+  color: #666;
+  font-size: 16px;
+}
 
-  .section {
-    margin-top: 34px;
-  }
+.left .uni {
+  color: #2d6cdf;
+  margin-top: 10px;
+}
 
-  .section h2 {
-    font-size: 21px;
-    font-weight: 600;
-    margin: 0 0 16px 0;
-    padding-bottom: 6px;
-    border-bottom: 1px solid #d9d9d9;
-  }
+/* ICONS */
+.icons {
+  margin-top: 15px;
+}
 
-  .section p {
-    margin: 0 0 14px 0;
-  }
+.icons a {
+  margin: 0 8px;
+  text-decoration: none;
+  font-size: 22px;
+}
 
-  .entry {
-    margin-bottom: 22px;
-  }
+/* ===== RIGHT CONTENT ===== */
+.right h2 {
+  font-size: 34px;
+  margin-top: 0;
+}
 
-  .date {
-    font-size: 14px;
-    color: #777777;
-    margin-bottom: 2px;
-  }
+.right p {
+  color: #333;
+  margin-bottom: 18px;
+}
 
-  .title {
-    font-weight: 600;
-    margin-bottom: 2px;
-  }
+/* LINKS */
+a {
+  color: #2d6cdf;
+  text-decoration: none;
+}
 
-  .place {
-    color: #222222;
-  }
+a:hover {
+  text-decoration: underline;
+}
 
-  .meta {
-    color: #555555;
-    margin-top: 4px;
-  }
-
-  .link-list a,
-  .projects a {
-    color: #005fcc;
-    text-decoration: none;
-  }
-
-  .link-list a:hover,
-  .projects a:hover {
-    text-decoration: underline;
-  }
-
-  .inline-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px 18px;
-  }
-
-  .inline-links a {
-    color: #005fcc;
-    text-decoration: none;
-  }
-
-  .inline-links a:hover {
-    text-decoration: underline;
-  }
-
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 8px;
-  }
-
-  .tag {
-    font-size: 13px;
-    color: #444;
-    background: #f2f4f7;
-    border: 1px solid #e4e7eb;
-    border-radius: 999px;
-    padding: 5px 10px;
-  }
-
-  @media (max-width: 720px) {
-    .hero {
-      grid-template-columns: 1fr;
-    }
-
-    .hero img {
-      width: 120px;
-    }
-
-    .navbar {
-      flex-wrap: wrap;
-      gap: 14px 18px;
-    }
-  }
 </style>
+
 </head>
+
 <body>
 
+<!-- NAVBAR -->
 <div class="navbar">
-  <a href="#bio">bio</a>
-  <a href="#experience">experience</a>
-  <a href="#education">education</a>
-  <a href="#courses">courses</a>
-  <a href="#projects">projects</a>
-  <a href="#links">links</a>
+  <a href="#">About me</a>
+  <a href="#">Teaching</a>
+  <a href="#">Publications</a>
+  <a href="#">Research Topics</a>
 </div>
 
+<!-- MAIN -->
 <div class="container">
 
-  <div class="hero">
-    <div>
-      <h1>Nelli Vagena</h1>
-      <p class="role">Research Associate</p>
-      <p class="subtitle">
-        Experimental Nuclear Physics | Radiation Physics | Geant4 | Monte Carlo Simulations
-      </p>
-    </div>
+<!-- LEFT -->
+<div class="left">
 
-    <img src="foto_clean.jpg" alt="Nelli Vagena">
+  <img src="foto_clean.jpg">
+
+  <h1>Nelli Vagena</h1>
+
+  <p class="subtitle">
+    Researcher in Nuclear Physics
+  </p>
+
+  <p class="uni">
+    Aristotle University of Thessaloniki
+  </p>
+
+  <div class="icons">
+    <a href="mailto:evagena@auth.gr">✉️</a>
+    <a href="#">🎓</a>
+    <a href="#">in</a>
   </div>
 
-  <div class="section" id="bio">
-    <h2>Bio</h2>
-    <p>
-      I hold a PhD in Nuclear Physics from the Department of Physics at Aristotle University of Thessaloniki. My research focuses on the experimental and computational study of nuclear reactions, nuclear data evaluation, and applications of nuclear physics in astrophysics, space science, and medical physics.
-    </p>
-    <p>
-      I have worked as a postdoctoral researcher at the Institute of Nuclear and Particle Physics of NCSR Demokritos and at Aristotle University of Thessaloniki, and I have collaborated with international research centers including Culham Centre for Fusion Energy (UK), LAPP in France, and CERN through ISOLDE and the n_TOF collaboration. I have also contributed to nuclear data evaluation activities of the International Atomic Energy Agency (IAEA), where I currently serve as a research associate.
-    </p>
-    <p>
-      My research includes nuclear reaction experiments at astrophysical energies, analysis and evaluation of cross sections, R-matrix calculations, and Monte Carlo simulations using Geant4 for applications in radiation detectors, dosimetry, space environments, and neutron experiments.
-    </p>
+</div>
 
-    <div class="tags">
-      <span class="tag">Geant4</span>
-      <span class="tag">Monte Carlo</span>
-      <span class="tag">R-matrix</span>
-      <span class="tag">Nuclear Data</span>
-      <span class="tag">Nuclear Astrophysics</span>
-    </div>
-  </div>
+<!-- RIGHT -->
+<div class="right">
 
-  <div class="section" id="experience">
-    <h2>Professional Experience</h2>
+  <h2>About me</h2>
 
-    <div class="entry">
-      <div class="date">01/2025 – present</div>
-      <div class="title">Research Associate</div>
-      <div class="place">International Atomic Energy Agency (IAEA)</div>
-    </div>
+  <p>
+    I am a researcher in experimental nuclear physics, focusing on nuclear reactions, nuclear data evaluation, and their applications in astrophysics, space, and medical physics.
+  </p>
 
-    <div class="entry">
-      <div class="date">05/2024 – present</div>
-      <div class="title">Research Associate</div>
-      <div class="place">n_TOF Collaboration, CERN</div>
-    </div>
+  <p>
+    My research includes R-matrix analysis, Monte Carlo simulations using Geant4, and experimental studies of nuclear reactions at astrophysical energies.
+  </p>
 
-    <div class="entry">
-      <div class="date">11/2024 – 01/2025</div>
-      <div class="title">Postdoctoral Researcher</div>
-      <div class="place">XRF Laboratory, Institute of Nuclear and Particle Physics, NCSR Demokritos</div>
-    </div>
+  <p>
+    I have worked at NCSR Demokritos, Aristotle University of Thessaloniki, Culham Centre for Fusion Energy, LAPP (France), and CERN (ISOLDE and n_TOF collaboration), and I currently collaborate with the International Atomic Energy Agency (IAEA).
+  </p>
 
-    <div class="entry">
-      <div class="date">01/2021 – 02/2022</div>
-      <div class="title">Research Associate</div>
-      <div class="place">International Atomic Energy Agency (IAEA)</div>
-    </div>
-
-    <div class="entry">
-      <div class="date">05/2019 – 11/2024</div>
-      <div class="title">Postdoctoral Researcher</div>
-      <div class="place">Nuclear Astrophysics Group, Institute of Nuclear and Particle Physics, NCSR Demokritos</div>
-    </div>
-
-    <div class="entry">
-      <div class="date">05/2018 – 09/2018</div>
-      <div class="title">Postdoctoral Researcher</div>
-      <div class="place">Neutron Studies Group, Culham Centre for Fusion Energy, Culham Science Centre, Abingdon, United Kingdom</div>
-    </div>
-
-    <div class="entry">
-      <div class="date">03/2016 – 12/2018</div>
-      <div class="title">Postdoctoral Researcher</div>
-      <div class="place">Nuclear Physics Laboratory, Aristotle University of Thessaloniki, Greece</div>
-    </div>
-
-    <div class="entry">
-      <div class="date">06/2016 – 08/2016</div>
-      <div class="title">Visiting Researcher</div>
-      <div class="place">Laboratoire d’Annecy-le-Vieux de Physique des Particules (LAPP), Annecy, France</div>
-    </div>
-
-    <div class="entry">
-      <div class="date">09/2014 – 07/2015</div>
-      <div class="title">PhD Candidate – Researcher</div>
-      <div class="place">ISOLDE, CERN, Switzerland</div>
-    </div>
-  </div>
-
-  <div class="section" id="education">
-    <h2>Education</h2>
-
-    <div class="entry">
-      <div class="date">2010 – 2016</div>
-      <div class="title">PhD in Nuclear Physics</div>
-      <div class="place">Department of Physics, Aristotle University of Thessaloniki</div>
-      <div class="meta">Supervisors: Professors S. Stoulos, G. Kitis, I. Savvidis</div>
-      <div class="meta">Thesis: Study of ionizing radiation fields in accelerator facilities</div>
-    </div>
-
-    <div class="entry">
-      <div class="date">2004 – 2007</div>
-      <div class="title">MSc in Radioelectrology</div>
-      <div class="place">Department of Physics, Aristotle University of Thessaloniki</div>
-    </div>
-
-    <div class="entry">
-      <div class="date">1999 – 2004</div>
-      <div class="title">BSc in Physics</div>
-      <div class="place">Department of Physics, Aristotle University of Thessaloniki</div>
-    </div>
-  </div>
-
-  <div class="section" id="courses">
-    <h2>Courses</h2>
-    <div class="entry">
-      <div class="title">Radiation Physics – Dosimetry and Applications</div>
-    </div>
-  </div>
-
-  <div class="section projects" id="projects">
-    <h2>Projects</h2>
-    <div class="entry">
-      <a href="https://ifigeneia.eu/" target="_blank" rel="noopener noreferrer">IFIGENEIA – Innovative Facility for Isotope GENeration with Efficient Ion Accelerator</a>
-    </div>
-    <div class="entry">
-      <a href="https://www.cost.eu/actions/CA24131/" target="_blank" rel="noopener noreferrer">ENRICH – European Network for radiation-detection based Research and Innovation addressing increasing societal CHallenges</a>
-    </div>
-  </div>
-
-  <div class="section link-list" id="links">
-    <h2>Links</h2>
-    <div class="inline-links">
-      <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-      <a href="https://orcid.org/" target="_blank" rel="noopener noreferrer">ORCID</a>
-      <a href="mailto:evagena@auth.gr">Email</a>
-    </div>
-  </div>
+</div>
 
 </div>
 
