@@ -9,17 +9,17 @@
 /* ===== BASE ===== */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Helvetica Neue", Arial, sans-serif;
   background: #ffffff;
   color: #111;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 /* ===== NAVBAR ===== */
 .navbar {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 45px;
   padding: 18px;
   border-bottom: 1px solid #eee;
 }
@@ -27,70 +27,94 @@ body {
 .navbar a {
   text-decoration: none;
   color: #333;
-  font-size: 15px;
+  font-size: 17px;  /* 👉 μεγαλύτερο */
 }
 
 .navbar a:hover {
   color: #2d6cdf;
 }
 
-/* ===== MAIN LAYOUT ===== */
+/* ===== LAYOUT ===== */
 .container {
-  max-width: 1100px;
-  margin: 50px auto;
+  max-width: 1200px;
+  margin: 60px auto;
   display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 60px;
+  grid-template-columns: 360px 1fr;
+  gap: 70px;
 }
 
-/* ===== LEFT PROFILE ===== */
+/* ===== LEFT ===== */
 .left {
   text-align: center;
 }
 
 .left img {
-  width: 220px;
-  border-radius: 50%;   /* 👉 στρογγυλή όπως στο site */
+  width: 240px;
+  border-radius: 50%;
 }
 
 .left h1 {
+  font-size: 34px;   /* 👉 μεγάλο όπως στο site */
   margin: 20px 0 10px;
-  font-size: 30px;
 }
 
-.left .subtitle {
+.subtitle {
+  font-size: 18px;
   color: #666;
-  font-size: 16px;
 }
 
-.left .uni {
-  color: #2d6cdf;
+.uni {
   margin-top: 10px;
+  color: #2d6cdf;
+  font-size: 17px;
 }
 
 /* ICONS */
 .icons {
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .icons a {
-  margin: 0 8px;
+  font-size: 24px;
+  margin: 0 10px;
   text-decoration: none;
-  font-size: 22px;
 }
 
-/* ===== RIGHT CONTENT ===== */
+/* ===== RIGHT ===== */
 .right h2 {
-  font-size: 34px;
-  margin-top: 0;
+  font-size: 36px;  /* 👉 μεγάλο title */
+  margin-bottom: 20px;
 }
 
 .right p {
+  font-size: 18px;  /* 👉 μεγαλύτερο text */
   color: #333;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
-/* LINKS */
+/* ===== SECTION ===== */
+.section {
+  margin-top: 50px;
+}
+
+.section h3 {
+  font-size: 26px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+/* ===== JOB ===== */
+.job {
+  margin-bottom: 25px;
+}
+
+.year {
+  color: #cc0000;
+  font-weight: bold;
+}
+
+/* ===== LINKS ===== */
 a {
   color: #2d6cdf;
   text-decoration: none;
@@ -114,7 +138,6 @@ a:hover {
   <a href="#">Research Topics</a>
 </div>
 
-<!-- MAIN -->
 <div class="container">
 
 <!-- LEFT -->
@@ -125,7 +148,8 @@ a:hover {
   <h1>Nelli Vagena</h1>
 
   <p class="subtitle">
-    Researcher in Nuclear Physics
+    Experimental Nuclear Physics <br>
+    Radiation Physics | Geant4 | Monte Carlo
   </p>
 
   <p class="uni">
@@ -146,16 +170,93 @@ a:hover {
   <h2>About me</h2>
 
   <p>
-    I am a researcher in experimental nuclear physics, focusing on nuclear reactions, nuclear data evaluation, and their applications in astrophysics, space, and medical physics.
+    I hold a PhD in Nuclear Physics from the Department of Physics at Aristotle University of Thessaloniki, with research activity focused on the experimental and computational study of nuclear reactions, nuclear data evaluation, and applications of nuclear physics in astrophysics, space science, and medical physics.
   </p>
 
   <p>
-    My research includes R-matrix analysis, Monte Carlo simulations using Geant4, and experimental studies of nuclear reactions at astrophysical energies.
+    I have worked as a postdoctoral researcher at the Institute of Nuclear and Particle Physics of NCSR Demokritos, Aristotle University of Thessaloniki, Culham Centre for Fusion Energy (UK), LAPP (France), and CERN (ISOLDE and n-TOF collaboration). I also collaborate with the International Atomic Energy Agency (IAEA).
   </p>
 
   <p>
-    I have worked at NCSR Demokritos, Aristotle University of Thessaloniki, Culham Centre for Fusion Energy, LAPP (France), and CERN (ISOLDE and n_TOF collaboration), and I currently collaborate with the International Atomic Energy Agency (IAEA).
+    My research includes nuclear reaction experiments, cross section evaluation, R-matrix calculations, and Monte Carlo simulations using Geant4 for applications in radiation detectors, dosimetry, space environments, and neutron experiments.
   </p>
+
+  <!-- EXPERIENCE -->
+  <div class="section">
+    <h3>Professional Experience</h3>
+
+    <div class="job">
+      <p class="year">01/2025 – present</p>
+      <p><b>Research Associate</b></p>
+      <p>International Atomic Energy Agency (IAEA)</p>
+    </div>
+
+    <div class="job">
+      <p class="year">05/2024 – present</p>
+      <p><b>Research Associate</b></p>
+      <p>CERN (n-TOF)</p>
+    </div>
+
+    <div class="job">
+      <p class="year">11/2024 – 01/2025</p>
+      <p><b>Postdoctoral Researcher</b></p>
+      <p>NCSR Demokritos</p>
+    </div>
+
+    <div class="job">
+      <p class="year">01/2021 – 02/2022</p>
+      <p><b>Research Associate</b></p>
+      <p>IAEA</p>
+    </div>
+
+    <div class="job">
+      <p class="year">05/2019 – 11/2024</p>
+      <p><b>Postdoctoral Researcher</b></p>
+      <p>Nuclear Astrophysics Group, NCSR Demokritos</p>
+    </div>
+
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section">
+    <h3>Education</h3>
+
+    <div class="job">
+      <p class="year">2010 – 2016</p>
+      <p><b>PhD in Nuclear Physics</b></p>
+      <p>Aristotle University of Thessaloniki</p>
+    </div>
+
+    <div class="job">
+      <p class="year">2004 – 2007</p>
+      <p><b>MSc</b></p>
+      <p>Aristotle University of Thessaloniki</p>
+    </div>
+
+    <div class="job">
+      <p class="year">1999 – 2004</p>
+      <p><b>BSc in Physics</b></p>
+    </div>
+
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section">
+    <h3>Projects</h3>
+
+    <p>
+      <a href="https://ifigeneia.eu/" target="_blank">
+        IFIGENEIA – Innovative Facility for Isotope Generation
+      </a>
+    </p>
+
+    <p>
+      <a href="https://www.cost.eu/actions/CA24131/" target="_blank">
+        ENRICH – European Network for Radiation Detection
+      </a>
+    </p>
+
+  </div>
 
 </div>
 
