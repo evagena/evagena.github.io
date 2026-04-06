@@ -5,21 +5,25 @@
 <title>Νέλλη Βαγενά</title>
 
 <style>
-
-/* ===== BASE ===== */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: #0b1c24;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #0f2027, #203a43);
   color: white;
 }
 
 /* ===== BANNER ===== */
 .banner {
   background: 
-    linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)),
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
     url('banner.png') center/cover no-repeat;
   height: 340px;
+  position: relative;
+}
+
+.overlay {
+  background: rgba(0,0,0,0.);
+  height: 100%;
   display: flex;
   align-items: center;
 }
@@ -35,25 +39,25 @@ body {
 .header {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 30px;
+}
+
+.header h1 {
+  text-shadow: 0 0 10px rgba(0,212,255,0.8);
 }
 
 .header img {
-  width: 140px;
+  width: 150px;
   border-radius: 50%;
-  border: 2px solid rgba(0,212,255,0.6);
+  border: 3px solid #00d4ff;
 }
 
-/* ===== TEXT ===== */
 h1 {
   margin: 0;
-  font-size: 36px;
-  font-weight: 600;
 }
 
 .subtitle {
-  color: #b0c4cc;
-  margin-top: 5px;
+  color: #ccc;
 }
 
 /* ===== BUTTONS ===== */
@@ -62,46 +66,43 @@ h1 {
 }
 
 .btn {
-  padding: 8px 18px;
+  display: inline-block;
+  padding: 10px 20px;
   margin-right: 10px;
-  border-radius: 6px;
-  background: rgba(0,212,255,0.15);
-  color: #00d4ff;
+  border-radius: 8px;
+  background: #00d4ff;
+  color: black;
   text-decoration: none;
-  border: 1px solid rgba(0,212,255,0.4);
+  font-weight: bold;
   transition: 0.3s;
 }
 
 .btn:hover {
-  background: #00d4ff;
-  color: black;
+  background: white;
+  transform: scale(1.05);
 }
 
 /* ===== SECTIONS ===== */
 section {
-  margin-top: 30px;
-  padding: 25px;
-  border-radius: 14px;
-  background: rgba(255,255,255,0.04);
-  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  margin-top: 25px;
+  border-radius: 12px;
 }
 
 h2 {
   color: #00d4ff;
-  margin-top: 0;
 }
 
-/* ===== JOBS ===== */
 .job {
   margin-bottom: 20px;
 }
 
 .year {
   color: #00d4ff;
-  font-weight: 600;
+  font-weight: bold;
 }
 
-/* ===== LINKS ===== */
 a {
   color: #00d4ff;
   text-decoration: none;
@@ -110,7 +111,6 @@ a {
 a:hover {
   text-decoration: underline;
 }
-
 </style>
 
 </head>
@@ -119,16 +119,18 @@ a:hover {
 
 <!-- ===== BANNER ===== -->
 <div class="banner">
-  <div class="container header">
-    <img src="foto_clean.jpg">
+  <div class="overlay">
+    <div class="container header">
+      <img src="photo.jpg">
+      <div>
+        <h1>Νέλλη Βαγενά</h1>
+        <p class="subtitle"> Experimental Nuclear Physics | Radiation Physics | Geant4 | Monte Carlo Simulations</p>
 
-    <div>
-      <h1>Νέλλη Βαγενά</h1>
-      <p class="subtitle">Experimental Nuclear Physics | Radiation Physics | Geant4</p>
+        <div class="buttons">
+          <a href="mailto:evagena@auth.gr" class="btn">Contact</a>
+          <a href="#projects" class="btn">Projects</a>
+        </div>
 
-      <div class="buttons">
-        <a href="mailto:evagena@auth.gr" class="btn">Contact</a>
-        <a href="#projects" class="btn">Projects</a>
       </div>
     </div>
   </div>
@@ -140,7 +142,7 @@ a:hover {
 <section>
 <h2>Σχετικά με εμένα</h2>
 <p>
-Είμαι διδάκτωρ Πυρηνικής Φυσικής με ερευνητική δραστηριότητα στην πειραματική και υπολογιστική μελέτη πυρηνικών αντιδράσεων, στην αξιολόγηση πυρηνικών δεδομένων και στις εφαρμογές της πυρηνικής φυσικής.
+Είμαι διδάκτωρ Πυρηνικής Φυσικής του Τμήματος Φυσικής του ΑΠΘ, με ερευνητική δραστηριότητα στην πειραματική και υπολογιστική μελέτη πυρηνικών αντιδράσεων, στην αξιολόγηση πυρηνικών δεδομένων και στις εφαρμογές της πυρηνικής φυσικής στην αστροφυσική, τη διαστημική και την ιατρική φυσική.
 </p>
 </section>
 
@@ -150,11 +152,34 @@ a:hover {
 <div class="job">
 <p class="year">2025 - 2026</p>
 <p><b>IAEA</b> – Ερευνητική Συνεργάτιδα</p>
+<p>R-matrix αναλύσεις για την αντίδραση ¹⁹F(α,n) με χρήση AZURE2 και παραγωγή δεδομένων ENDF-6.</p>
 </div>
 
 <div class="job">
 <p class="year">2023 - 2024</p>
-<p><b>CERN (n-TOF)</b></p>
+<p><b>CERN (n-TOF)</b> – Ερευνητική Συνεργάτιδα</p>
+</div>
+
+<div class="job">
+<p class="year">2024 - 2025</p>
+<p><b>Δημόκριτος (XRF Lab)</b> – Μεταδιδακτορική Ερευνήτρια</p>
+<p>Monte Carlo προσομοιώσεις (Geant4) για παραγωγή ακτινοβολίας Χ.</p>
+</div>
+
+<div class="job">
+<p class="year">2019 - 2024</p>
+<p><b>ΙΠΣΦ, Δημόκριτος</b> – Μεταδιδακτορική Ερευνήτρια</p>
+<p>FISPACT-II, ενεργές διατομές και p-process.</p>
+</div>
+
+<div class="job">
+<p class="year">2018</p>
+<p><b>Culham Centre for Fusion Energy (UK)</b></p>
+</div>
+
+<div class="job">
+<p class="year">2016 - 2018</p>
+<p><b>ΑΠΘ</b> – Μεταδιδακτορική Ερευνήτρια</p>
 </div>
 
 </section>
@@ -164,29 +189,46 @@ a:hover {
 
 <div class="job">
 <p class="year">2010 - 2016</p>
-<p>Διδακτορικό – ΑΠΘ</p>
+<p><b>Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης</b></p>
+<p>Διδακτορικό στη Πυρηνική Φυσική</p>
 </div>
 
 <div class="job">
 <p class="year">2004 - 2007</p>
-<p>Μεταπτυχιακό – ΑΠΘ</p>
+<p><b>Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης</b></p>
+<p>Μεταπτυχιακό ΠΜΣ Ραδιοηλεκτρολογία</p>
+</div>
+
+<div class="job">
+<p class="year">1999 - 2004</p>
+<p><b>Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης</b></p>
+<p>Πτυχίο Φυσικής</p>
 </div>
 
 </section>
 
 <section id="projects">
 <h2>Projects</h2>
-
 <ul>
-<li><a href="https://ifigeneia.eu/" target="_blank">IFIGENEIA</a></li>
-<li><a href="https://www.cost.eu/actions/CA24131/" target="_blank">ENRICH</a></li>
-</ul>
+  <li>
+    <a href="https://ifigeneia.eu/" target="_blank">
+      IFIGENEIA – Innovative Facility for Isotope GENeration
+    </a>
+  </li>
 
+  <li>
+    <a href="https://www.cost.eu/actions/CA24131/" target="_blank">
+      ENRICH – European Network for Radiation Detection
+    </a>
+  </li>
+
+  <li>Hi-MoCaRT</li>
+</ul>
 </section>
 
 <section>
 <h2>Contact</h2>
-<p><a href="mailto:evagena@auth.gr">evagena@auth.gr</a></p>
+<p>Email: <a href="mailto:evagena@auth.gr">evagena@auth.gr</a></p>
 </section>
 
 </div>
