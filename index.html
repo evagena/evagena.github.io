@@ -7,22 +7,47 @@
 <style>
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #0f2027, #203a43);
-  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+  background: #0b0f14;
+  color: #e6edf3;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.95);
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px;
+  z-index: 1000;
+}
+
+.navbar a {
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.2s;
+}
+
+.navbar a:hover {
+  color: #00aaff;
 }
 
 /* ===== BANNER ===== */
 .banner {
+  margin-top: 60px;
   background: 
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)),
     url('banner.png') center/cover no-repeat;
   height: 340px;
   position: relative;
 }
 
 .overlay {
-  background: rgba(0,0,0,0.);
+  background: rgba(0,0,0,0.2);
   height: 100%;
   display: flex;
   align-items: center;
@@ -50,10 +75,6 @@ body {
   width: 150px;
   border-radius: 50%;
   border: 3px solid #00d4ff;
-}
-
-h1 {
-  margin: 0;
 }
 
 .subtitle {
@@ -117,6 +138,16 @@ a:hover {
 
 <body>
 
+<!-- ===== NAVBAR ===== -->
+<div class="navbar">
+  <a href="#publications">publications</a>
+  <a href="#research">research</a>
+  <a href="#talks">talks</a>
+  <a href="#projects">projects</a>
+  <a href="#gallery">gallery</a>
+  <a href="#cv">cv</a>
+</div>
+
 <!-- ===== BANNER ===== -->
 <div class="banner">
   <div class="overlay">
@@ -124,7 +155,9 @@ a:hover {
       <img src="photo.jpg">
       <div>
         <h1>Νέλλη Βαγενά</h1>
-        <p class="subtitle"> Experimental Nuclear Physics | Radiation Physics | Geant4 | Monte Carlo Simulations</p>
+        <p class="subtitle">
+          Experimental Nuclear Physics | Radiation Physics | Geant4 | Monte Carlo Simulations
+        </p>
 
         <div class="buttons">
           <a href="mailto:evagena@auth.gr" class="btn">Contact</a>
@@ -142,88 +175,53 @@ a:hover {
 <section>
 <h2>Σχετικά με εμένα</h2>
 <p>
-Είμαι διδάκτωρ Πυρηνικής Φυσικής του Τμήματος Φυσικής του ΑΠΘ, με ερευνητική δραστηριότητα στην πειραματική και υπολογιστική μελέτη πυρηνικών αντιδράσεων, στην αξιολόγηση πυρηνικών δεδομένων και στις εφαρμογές της πυρηνικής φυσικής στην αστροφυσική, τη διαστημική και την ιατρική φυσική.
+Είμαι διδάκτωρ Πυρηνικής Φυσικής του Τμήματος Φυσικής του ΑΠΘ...
 </p>
 </section>
 
 <section>
 <h2>Επαγγελματική Εμπειρία</h2>
-
-<div class="job">
-<p class="year">2025 - 2026</p>
-<p><b>IAEA</b> – Ερευνητική Συνεργάτιδα</p>
-<p>R-matrix αναλύσεις για την αντίδραση ¹⁹F(α,n) με χρήση AZURE2 και παραγωγή δεδομένων ENDF-6.</p>
-</div>
-
-<div class="job">
-<p class="year">2023 - 2024</p>
-<p><b>CERN (n-TOF)</b> – Ερευνητική Συνεργάτιδα</p>
-</div>
-
-<div class="job">
-<p class="year">2024 - 2025</p>
-<p><b>Δημόκριτος (XRF Lab)</b> – Μεταδιδακτορική Ερευνήτρια</p>
-<p>Monte Carlo προσομοιώσεις (Geant4) για παραγωγή ακτινοβολίας Χ.</p>
-</div>
-
-<div class="job">
-<p class="year">2019 - 2024</p>
-<p><b>ΙΠΣΦ, Δημόκριτος</b> – Μεταδιδακτορική Ερευνήτρια</p>
-<p>FISPACT-II, ενεργές διατομές και p-process.</p>
-</div>
-
-<div class="job">
-<p class="year">2018</p>
-<p><b>Culham Centre for Fusion Energy (UK)</b></p>
-</div>
-
-<div class="job">
-<p class="year">2016 - 2018</p>
-<p><b>ΑΠΘ</b> – Μεταδιδακτορική Ερευνήτρια</p>
-</div>
-
+<!-- (κρατάς όπως έχεις) -->
 </section>
 
 <section>
 <h2>Εκπαίδευση</h2>
-
-<div class="job">
-<p class="year">2010 - 2016</p>
-<p><b>Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης</b></p>
-<p>Διδακτορικό στη Πυρηνική Φυσική</p>
-</div>
-
-<div class="job">
-<p class="year">2004 - 2007</p>
-<p><b>Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης</b></p>
-<p>Μεταπτυχιακό ΠΜΣ Ραδιοηλεκτρολογία</p>
-</div>
-
-<div class="job">
-<p class="year">1999 - 2004</p>
-<p><b>Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης</b></p>
-<p>Πτυχίο Φυσικής</p>
-</div>
-
+<!-- (κρατάς όπως έχεις) -->
 </section>
 
 <section id="projects">
 <h2>Projects</h2>
 <ul>
-  <li>
-    <a href="https://ifigeneia.eu/" target="_blank">
-      IFIGENEIA – Innovative Facility for Isotope GENeration
-    </a>
-  </li>
-
-  <li>
-    <a href="https://www.cost.eu/actions/CA24131/" target="_blank">
-      ENRICH – European Network for Radiation Detection
-    </a>
-  </li>
-
-  <li>Hi-MoCaRT</li>
+  <li><a href="https://ifigeneia.eu/" target="_blank">IFIGENEIA</a></li>
+  <li><a href="https://www.cost.eu/actions/CA24131/" target="_blank">ENRICH</a></li>
 </ul>
+</section>
+
+<!-- ===== NEW SECTIONS ===== -->
+
+<section id="publications">
+<h2>Publications</h2>
+<p>(βάζουμε μετά papers εδώ)</p>
+</section>
+
+<section id="research">
+<h2>Research</h2>
+<p>(Geant4, R-matrix, nuclear data κλπ)</p>
+</section>
+
+<section id="talks">
+<h2>Talks</h2>
+<p>(conferences, presentations)</p>
+</section>
+
+<section id="gallery">
+<h2>Gallery</h2>
+<p>(images από simulations / detectors)</p>
+</section>
+
+<section id="cv">
+<h2>CV</h2>
+<p>(θα βάλουμε PDF ή πλήρες CV)</p>
 </section>
 
 <section>
