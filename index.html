@@ -131,23 +131,26 @@ body {
   pointer-events: none;
 }
 
+/* ===== SOFT EDGE IMAGE ===== */
+.experience-image {
+  position: absolute;
+  right: -250px;
+  top: -20px;
+  width: 750px;
+  opacity: 0.25;          /* 👉 πολύ πιο soft */
+  pointer-events: none;
+}
+
 .experience-image img {
   width: 100%;
   border-radius: 20px;
 
-  /* 👉 FLUO EFFECT */
-  filter: 
-    brightness(6)
-    contrast(1.1)
-    saturate(1.2);
+  /* 👉 blur */
+  filter: blur(8px) brightness(1.1);
 
-  /* 👉 SOFT BLEND */
-  mix-blend-mode: multiply;
-
-  /* 👉 GLOW */
-  box-shadow:
-    0 0 80px rgba(0,123,255,0.15),
-    0 0 120px rgba(0,123,255,0.08);
+  /* 👉 fade στις άκρες */
+  mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
 }
 
 /* ===== TEXT FRONT ===== */
