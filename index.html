@@ -31,6 +31,7 @@ body {
 .navbar a {
   color: #333;
   text-decoration: none;
+  font-size: 16px;
 }
 
 .navbar a:hover {
@@ -53,7 +54,7 @@ body {
   display: flex;
   align-items: center;
   gap: 25px;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: auto;
 }
 
@@ -63,16 +64,21 @@ body {
   border: 2px solid #0077ff;
 }
 
+.header h1 {
+  margin: 0;
+  font-size: 32px;
+  color: #111;
+}
+
 .subtitle {
   color: #555;
 }
 
-/* ===== MAIN GRID ===== */
+/* ===== MAIN ===== */
 .main {
   display: grid;
-  grid-template-columns: 280px 1fr 420px;
-  gap: 20px;
-  max-width: 1200px;
+  grid-template-columns: 300px 1fr;
+  max-width: 1100px;
   margin: 40px auto;
 }
 
@@ -80,7 +86,7 @@ body {
 .sidebar {
   background: white;
   padding: 25px;
-  border-radius: 10px;
+  border-radius: 10px 0 0 10px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.05);
 }
 
@@ -88,7 +94,7 @@ body {
   color: #0077ff;
 }
 
-/* TAGS */
+/* ===== TAGS ===== */
 .tag {
   display: inline-block;
   background: #eef3f8;
@@ -98,11 +104,22 @@ body {
   font-size: 13px;
 }
 
+/* ===== SOCIAL ===== */
+.social a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #555;
+}
+
+.social a:hover {
+  color: #0077ff;
+}
+
 /* ===== CONTENT ===== */
 .content {
   background: white;
   padding: 30px;
-  border-radius: 10px;
+  border-radius: 0 10px 10px 0;
   box-shadow: 0 5px 20px rgba(0,0,0,0.05);
 }
 
@@ -114,8 +131,10 @@ body {
   border-bottom: 2px solid #0077ff;
   display: inline-block;
   padding-bottom: 5px;
+  color: #111;
 }
 
+/* ===== JOB ===== */
 .job {
   margin-bottom: 20px;
 }
@@ -123,25 +142,6 @@ body {
 .year {
   color: #ff4d4d;
   font-weight: bold;
-}
-
-/* ===== RIGHT IMAGE ===== */
-.research {
-  display: flex;
-  align-items: flex-start;
-}
-
-.research img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width: 1000px){
-  .main {
-    grid-template-columns: 1fr;
-  }
 }
 
 </style>
@@ -167,7 +167,7 @@ body {
     <div>
       <h1>Νέλλη Βαγενά</h1>
       <p class="subtitle">
-        Experimental Nuclear Physics | Radiation Physics | Geant4
+        Experimental Nuclear Physics | Radiation Physics | Geant4 | Monte Carlo
       </p>
     </div>
   </div>
@@ -178,15 +178,24 @@ body {
 
 <!-- SIDEBAR -->
 <div class="sidebar">
+
 <h3>Σχετικά</h3>
 <p>
-Είμαι διδάκτωρ Πυρηνικής Φυσικής του Τμήματος Φυσικής του ΑΠΘ με ερευνητική δραστηριότητα στην πειραματική και υπολογιστική μελέτη πυρηνικών αντιδράσεων και την αξιολόγηση πυρηνικών δεδομένων.
+Είμαι διδάκτωρ Πυρηνικής Φυσικής του Τμήματος Φυσικής του Αριστοτελείου Πανεπιστημίου Θεσσαλονίκης, με ερευνητική δραστηριότητα στην πειραματική και υπολογιστική μελέτη πυρηνικών αντιδράσεων, στην αξιολόγηση πυρηνικών δεδομένων και στις εφαρμογές της πυρηνικής φυσικής στην αστροφυσική, τη διαστημική και την ιατρική φυσική. 
 </p>
 
 <h3>Δεξιότητες</h3>
 <span class="tag">Geant4</span>
 <span class="tag">Monte Carlo</span>
 <span class="tag">R-matrix</span>
+<span class="tag">Nuclear Data</span>
+
+<h3>Links</h3>
+<div class="social">
+  <a href="https://linkedin.com" target="_blank">LinkedIn</a><br>
+  <a href="https://scholar.google.com" target="_blank">Google Scholar</a><br>
+  <a href="https://orcid.org" target="_blank">ORCID</a>
+</div>
 
 </div>
 
@@ -198,21 +207,89 @@ body {
 
 <div class="job">
 <p class="year">01/2025 – σήμερα</p>
-<p><b>IAEA</b></p>
+<p><b>Ερευνητική Συνεργάτιδα</b></p>
+<p>Διεθνής Οργανισμός Ατομικής Ενέργειας (IAEA)</p>
 </div>
 
 <div class="job">
 <p class="year">05/2024 – σήμερα</p>
-<p><b>CERN (n-TOF)</b></p>
+<p><b>Ερευνητική Συνεργάτιδα</b></p>
+<p>Συνεργασία n-TOF, CERN</p>
+</div>
+
+<div class="job">
+<p class="year">11/2024 – 01/2025</p>
+<p><b>Μεταδιδακτορική Ερευνήτρια</b></p>
+<p>Εργαστήριο XRF, ΙΠΣΦ, ΕΚΕΦΕ «Δημόκριτος»</p>
+</div>
+
+<div class="job">
+<p class="year">01/2021 – 02/2022</p>
+<p><b>Ερευνητική Συνεργάτιδα</b></p>
+<p>Διεθνής Οργανισμός Ατομικής Ενέργειας (IAEA)</p>
+</div>
+
+<div class="job">
+<p class="year">05/2019 – 11/2024</p>
+<p><b>Μεταδιδακτορική Ερευνήτρια</b></p>
+<p>Ομάδα Πυρηνικής Αστροφυσικής, ΙΠΣΦ, ΕΚΕΦΕ «Δημόκριτος»</p>
+</div>
+
+<div class="job">
+<p class="year">05/2018 – 09/2018</p>
+<p><b>Μεταδιδακτορική Ερευνήτρια</b></p>
+<p>Culham Centre for Fusion Energy, Ηνωμένο Βασίλειο</p>
+</div>
+
+<div class="job">
+<p class="year">03/2016 – 12/2018</p>
+<p><b>Μεταδιδακτορική Ερευνήτρια</b></p>
+<p>Εργαστήριο Πυρηνικής Φυσικής, ΑΠΘ</p>
+</div>
+
+<div class="job">
+<p class="year">06/2016 – 08/2016</p>
+<p><b>Επισκέπτρια Ερευνήτρια</b></p>
+<p>LAPP, Annecy, Γαλλία</p>
+</div>
+
+<div class="job">
+<p class="year">09/2014 – 07/2015</p>
+<p><b>Υποψήφια Διδάκτωρ – Ερευνήτρια</b></p>
+<p>ISOLDE, CERN, Ελβετία</p>
 </div>
 
 </div>
 
+<div class="section">
+<h2>Εκπαίδευση</h2>
+
+<div class="job">
+<p class="year">2010 - 2016</p>
+<p>PhD – ΑΠΘ</p>
+
 </div>
 
-<!-- RIGHT IMAGE -->
-<div class="research">
-  <img src="research.png">
+<div class="job">
+<p class="year">2004 - 2007</p>
+<p>MSc – ΑΠΘ</p>
+</div>
+
+<div class="job">
+<p class="year">1999 - 2004</p>
+<p>BSc – Φυσική</p>
+</div>
+
+</div>
+
+<div class="section">
+<h2>Projects</h2>
+
+<p><a href="https://ifigeneia.eu/" target="_blank">IFIGENEIA</a></p>
+<p><a href="https://www.cost.eu/actions/CA24131/" target="_blank">ENRICH</a></p>
+
+</div>
+
 </div>
 
 </div>
