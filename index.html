@@ -25,13 +25,11 @@ body {
   gap: 25px;
   background: rgba(255,255,255,0.9);
   backdrop-filter: blur(6px);
-  z-index: 1000;
 }
 
 .navbar a {
   color: #333;
   text-decoration: none;
-  font-size: 16px;
 }
 
 .navbar a:hover {
@@ -49,7 +47,6 @@ body {
   align-items: center;
 }
 
-/* ===== HEADER ===== */
 .header {
   display: flex;
   align-items: center;
@@ -64,12 +61,6 @@ body {
   border: 2px solid #0077ff;
 }
 
-.header h1 {
-  margin: 0;
-  font-size: 32px;
-  color: #111;
-}
-
 .subtitle {
   color: #555;
 }
@@ -77,50 +68,32 @@ body {
 /* ===== MAIN ===== */
 .main {
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 280px 1fr;
   max-width: 1100px;
   margin: 40px auto;
+  gap: 40px;
 }
 
 /* ===== SIDEBAR ===== */
 .sidebar {
-  background: white;
-  padding: 25px;
-  border-radius: 10px 0 0 10px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  padding: 20px;
 }
 
 .sidebar h3 {
   color: #0077ff;
 }
 
-/* ===== TAGS ===== */
 .tag {
   display: inline-block;
   background: #eef3f8;
   padding: 6px 10px;
   border-radius: 20px;
   margin: 5px;
-  font-size: 13px;
-}
-
-/* ===== SOCIAL ===== */
-.social a {
-  margin-right: 10px;
-  text-decoration: none;
-  color: #555;
-}
-
-.social a:hover {
-  color: #0077ff;
 }
 
 /* ===== CONTENT ===== */
 .content {
-  background: white;
-  padding: 30px;
-  border-radius: 0 10px 10px 0;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  padding: 10px;
 }
 
 .section {
@@ -131,10 +104,8 @@ body {
   border-bottom: 2px solid #0077ff;
   display: inline-block;
   padding-bottom: 5px;
-  color: #111;
 }
 
-/* ===== JOB ===== */
 .job {
   margin-bottom: 20px;
 }
@@ -142,6 +113,26 @@ body {
 .year {
   color: #ff4d4d;
   font-weight: bold;
+}
+
+/* ===== EXPERIENCE IMAGE ===== */
+.experience-wrapper {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.experience-text {
+  flex: 1;
+}
+
+.experience-image {
+  width: 420px;
+}
+
+.experience-image img {
+  width: 100%;
+  border-radius: 12px;
 }
 
 </style>
@@ -178,10 +169,9 @@ body {
 
 <!-- SIDEBAR -->
 <div class="sidebar">
-
 <h3>Σχετικά</h3>
 <p>
-Είμαι διδάκτωρ Πυρηνικής Φυσικής του Τμήματος Φυσικής του Αριστοτελείου Πανεπιστημίου Θεσσαλονίκης, με ερευνητική δραστηριότητα στην πειραματική και υπολογιστική μελέτη πυρηνικών αντιδράσεων, στην αξιολόγηση πυρηνικών δεδομένων και στις εφαρμογές της πυρηνικής φυσικής στην αστροφυσική, τη διαστημική και την ιατρική φυσική. 
+Είμαι διδάκτωρ Πυρηνικής Φυσικής του Τμήματος Φυσικής του Αριστοτελείου Πανεπιστημίου Θεσσαλονίκης, με ερευνητική δραστηριότητα στην πειραματική και υπολογιστική μελέτη πυρηνικών αντιδράσεων, στην αξιολόγηση πυρηνικών δεδομένων και στις εφαρμογές της πυρηνικής φυσικής στην αστροφυσική, τη διαστημική και την ιατρική φυσική.
 </p>
 
 <h3>Δεξιότητες</h3>
@@ -191,12 +181,9 @@ body {
 <span class="tag">Nuclear Data</span>
 
 <h3>Links</h3>
-<div class="social">
-  <a href="https://linkedin.com" target="_blank">LinkedIn</a><br>
-  <a href="https://scholar.google.com" target="_blank">Google Scholar</a><br>
-  <a href="https://orcid.org" target="_blank">ORCID</a>
-</div>
-
+<p>LinkedIn</p>
+<p>Google Scholar</p>
+<p>ORCID</p>
 </div>
 
 <!-- CONTENT -->
@@ -204,6 +191,12 @@ body {
 
 <div class="section">
 <h2>Επαγγελματική Εμπειρία</h2>
+
+<div class="experience-wrapper">
+
+<div class="experience-text">
+
+<!-- ΔΕΝ ΠΕΙΡΑΖΩ ΤΟ CONTENT ΣΟΥ -->
 
 <div class="job">
 <p class="year">01/2025 – σήμερα</p>
@@ -261,33 +254,12 @@ body {
 
 </div>
 
-<div class="section">
-<h2>Εκπαίδευση</h2>
-
-<div class="job">
-<p class="year">2010 - 2016</p>
-<p>PhD – ΑΠΘ</p>
-
-</div>
-
-<div class="job">
-<p class="year">2004 - 2007</p>
-<p>MSc – ΑΠΘ</p>
-</div>
-
-<div class="job">
-<p class="year">1999 - 2004</p>
-<p>BSc – Φυσική</p>
+<!-- IMAGE -->
+<div class="experience-image">
+  <img src="research.png">
 </div>
 
 </div>
-
-<div class="section">
-<h2>Projects</h2>
-
-<p><a href="https://ifigeneia.eu/" target="_blank">IFIGENEIA</a></p>
-<p><a href="https://www.cost.eu/actions/CA24131/" target="_blank">ENRICH</a></p>
-
 </div>
 
 </div>
