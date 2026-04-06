@@ -10,7 +10,7 @@
 body {
   margin: 0;
   font-family: 'Inter', -apple-system, sans-serif;
-  background: #f5f7fa;
+  background: linear-gradient(135deg, #f5f7fa, #eef3f8);
   color: #1a1a1a;
 }
 
@@ -22,7 +22,7 @@ body {
   display: flex;
   justify-content: center;
   padding: 25px 0;
-  gap: 45px;
+  gap: 50px;
   background: rgba(255,255,255,0.95);
   backdrop-filter: blur(6px);
   z-index: 1000;
@@ -44,7 +44,7 @@ body {
   margin-top: 70px;
   height: 260px;
   background:
-    linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.85)),
+    linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.85)),
     url('banner.png') center/cover no-repeat;
   display: flex;
   align-items: center;
@@ -101,7 +101,7 @@ body {
 
 /* ===== SECTION ===== */
 .section {
-  margin-bottom: 40px;
+  margin-bottom: 60px;
   position: relative;
 }
 
@@ -121,19 +121,33 @@ body {
   font-weight: bold;
 }
 
-/* ===== FLOAT IMAGE (THE FIX) ===== */
+/* ===== 🔥 BIG FLOAT IMAGE ===== */
 .experience-image {
   position: absolute;
-  right: -220px;     /* 👉 βγαίνει δεξιά */
-  top: 20px;
-  width: 520px;      /* 👉 ΜΕΓΑΛΗ */
-  opacity: 0.85;
+  right: -320px;   /* 👉 ΒΓΑΙΝΕΙ ΕΞΩ */
+  top: -40px;
+  width: 700px;    /* 👉 ΠΟΛΥ ΜΕΓΑΛΗ */
+  opacity: 0.75;
+  pointer-events: none;
 }
 
 .experience-image img {
   width: 100%;
-  border-radius: 14px;
-  filter: brightness(1.1) contrast(1.05) saturate(1.1);
+  border-radius: 20px;
+
+  /* 👉 FLUO EFFECT */
+  filter: 
+    brightness(1.2)
+    contrast(1.1)
+    saturate(1.2);
+
+  /* 👉 SOFT BLEND */
+  mix-blend-mode: multiply;
+
+  /* 👉 GLOW */
+  box-shadow:
+    0 0 80px rgba(0,123,255,0.15),
+    0 0 120px rgba(0,123,255,0.08);
 }
 
 /* ===== TEXT FRONT ===== */
@@ -261,7 +275,7 @@ body {
 
 </div>
 
-<!-- 🔥 IMAGE (σωστή θέση) -->
+<!-- 🔥 BIG IMAGE -->
 <div class="experience-image">
   <img src="research.png">
 </div>
