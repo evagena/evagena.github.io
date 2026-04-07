@@ -40,7 +40,7 @@ body {
   color: #2d6cdf;
 }
 
-/* ===== LAYOUT ===== */
+/* ===== ABOUT LAYOUT ===== */
 .container {
   max-width: 1250px;
   margin: 90px auto;
@@ -61,6 +61,7 @@ body {
 
 .left h1 {
   font-size: 46px;
+  margin: 25px 0 12px;
   font-weight: 200;
 }
 
@@ -70,6 +71,7 @@ body {
 }
 
 .uni {
+  margin-top: 12px;
   color: #2d6cdf;
   font-size: 18px;
 }
@@ -83,33 +85,22 @@ body {
 .right p {
   font-size: 22px;
   font-weight: 300;
+  color: #333;
 }
 
-/* ===== SECTION ===== */
+/* ===== SECTIONS ===== */
 .section {
-  margin-top: 70px;
+  margin-top: 60px;
 }
 
-/* ===== TWO COLUMN (Interests + Education) ===== */
-.two-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  margin-top: 40px;
-}
-
-.two-columns h3 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.two-columns ul {
-  font-size: 18px;
+.section h3 {
+  font-size: 30px;
+  border-bottom: 1px solid #ddd;
 }
 
 /* ===== JOB ===== */
 .job {
-  margin-bottom: 25px;
+  margin-bottom: 28px;
   font-size: 19px;
 }
 
@@ -118,7 +109,39 @@ body {
   font-weight: bold;
 }
 
+/* ===== FULL WIDTH SECTION ===== */
+.full-section {
+  background: #f2f2f2;
+  padding: 120px 0;
+}
+
+.full-inner {
+  max-width: 1250px;
+  margin: auto;
+}
+
+/* layout σαν Thomas */
+.full-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 100px;
+}
+
+.full-left h2 {
+  font-size: 48px;
+  font-weight: 300;
+}
+
+.full-right p {
+  font-size: 22px;
+}
+
+.full-right ul {
+  font-size: 20px;
+}
+
 </style>
+
 </head>
 
 <body>
@@ -131,12 +154,11 @@ body {
   <a href="#research">Research Topics</a>
 </div>
 
+<!-- ABOUT -->
 <div class="container">
 
-<!-- LEFT -->
 <div class="left">
   <img src="foto_clean.jpg">
-
   <h1>Nelli Vagena</h1>
 
   <p class="subtitle">
@@ -149,74 +171,77 @@ body {
   </p>
 </div>
 
-<!-- RIGHT -->
 <div class="right" id="about">
 
   <h2>About me</h2>
 
   <p>
-    I hold a PhD in Nuclear Physics from Aristotle University of Thessaloniki.
+    I hold a PhD in Nuclear Physics from the Department of Physics at Aristotle University of Thessaloniki, with research activity focused on the experimental and computational study of nuclear reactions, nuclear data evaluation, and applications of nuclear physics in astrophysics, space science, and medical physics.
   </p>
 
   <p>
-    I have worked at NCSR Demokritos, CERN, Culham, and collaborate with IAEA.
+    I have worked as a postdoctoral researcher at the Institute of Nuclear and Particle Physics of NCSR Demokritos, Aristotle University of Thessaloniki, Culham Centre for Fusion Energy (UK), LAPP (France), and CERN (ISOLDE and n-TOF collaboration). I also collaborate with the International Atomic Energy Agency (IAEA).
   </p>
 
-  <!-- INTERESTS + EDUCATION -->
-  <div class="two-columns">
-
-    <div>
-      <h3>Interests</h3>
-      <ul>
-        <li>Nuclear reactions</li>
-        <li>Monte Carlo simulations</li>
-        <li>Astrophysics</li>
-      </ul>
-    </div>
-
-    <div>
-      <h3>Education</h3>
-      <ul>
-        <li>PhD Physics – AUTH</li>
-        <li>MSc – AUTH</li>
-        <li>BSc Physics</li>
-      </ul>
-    </div>
-
-  </div>
+  <p>
+    My research includes nuclear reaction experiments, cross section evaluation, R-matrix calculations, and Monte Carlo simulations using Geant4.
+  </p>
 
   <!-- EXPERIENCE -->
-  <div class="section" id="research">
-    <h2>Professional Experience</h2>
+  <div class="section">
+    <h3>Professional Experience</h3>
 
     <div class="job">
-      <p class="year">2025–present</p>
-      <p>IAEA</p>
+      <p class="year">01/2025 – present</p>
+      <p><b>Research Associate</b></p>
+      <p>International Atomic Energy Agency (IAEA)</p>
     </div>
 
     <div class="job">
-      <p class="year">2024–present</p>
-      <p>CERN</p>
+      <p class="year">05/2024 – present</p>
+      <p><b>Research Associate</b></p>
+      <p>CERN (n-TOF)</p>
     </div>
-  </div>
 
-  <!-- 🔥 TEACHING (FIXED – SAME STYLE) -->
-  <div class="section" id="teaching">
-    <h2>Teaching</h2>
-
-    <p>
-      Currently, I contribute to postgraduate teaching in Radiation Physics,
-      Dosimetry and Monte Carlo simulations.
-    </p>
-
-    <ul>
-      <li>Radiation Physics</li>
-      <li>Geant4 simulations</li>
-      <li>Nuclear modelling</li>
-    </ul>
   </div>
 
 </div>
+
+</div> <!-- END CONTAINER -->
+
+<!-- 🔥 TEACHING FULL WIDTH -->
+<div class="full-section" id="teaching">
+
+  <div class="full-inner">
+
+    <div class="full-grid">
+
+      <div class="full-left">
+        <h2>Teaching</h2>
+      </div>
+
+      <div class="full-right">
+
+        <p>
+          Currently, I contribute to postgraduate teaching in Radiation Physics,
+          Dosimetry, and Monte Carlo simulations, with emphasis on Geant4-based
+          modelling and nuclear applications.
+        </p>
+
+        <ul>
+          <li>Radiation Physics and Dosimetry</li>
+          <li>Monte Carlo simulations (Geant4)</li>
+          <li>Nuclear reaction modelling</li>
+          <li>Detector physics and instrumentation</li>
+          <li>Astrophysical nuclear processes</li>
+          <li>R-matrix methods</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </div>
 
