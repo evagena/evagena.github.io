@@ -19,15 +19,19 @@ body {
 
 /* ===== NAVBAR ===== */
 .navbar {
-  display: flex;
-  justify-content: flex-start;
-  padding: 20px 60px;
-  gap: 40px;
-  border-bottom: 1px solid #eee;
   position: sticky;
   top: 0;
   background: white;
+  border-bottom: 1px solid #eee;
   z-index: 1000;
+}
+
+.nav-inner {
+  max-width: 1250px;
+  margin: auto;
+  padding: 20px 60px;   /* 🔥 ALIGN με content */
+  display: flex;
+  gap: 40px;
 }
 
 .navbar a {
@@ -40,10 +44,11 @@ body {
   color: #2d6cdf;
 }
 
-/* ===== ABOUT LAYOUT ===== */
+/* ===== ABOUT ===== */
 .container {
   max-width: 1250px;
   margin: 90px auto;
+  padding: 0 60px;   /* 🔥 ΙΔΙΟ με navbar */
   display: grid;
   grid-template-columns: 400px 1fr;
   gap: 100px;
@@ -88,28 +93,7 @@ body {
   color: #333;
 }
 
-/* ===== SECTIONS ===== */
-.section {
-  margin-top: 60px;
-}
-
-.section h3 {
-  font-size: 30px;
-  border-bottom: 1px solid #ddd;
-}
-
-/* ===== JOB ===== */
-.job {
-  margin-bottom: 28px;
-  font-size: 19px;
-}
-
-.year {
-  color: #cc0000;
-  font-weight: bold;
-}
-
-/* ===== FULL WIDTH SECTION ===== */
+/* ===== FULL SECTIONS ===== */
 .full-section {
   background: #f2f2f2;
   padding: 120px 0;
@@ -118,21 +102,24 @@ body {
 .full-inner {
   max-width: 1250px;
   margin: auto;
-  padding: 10 40px;   /* 🔥 ΙΔΙΟ με navbar */
+  padding: 0 60px;   /* 🔥 SAME ALIGNMENT */
 }
 
-/* layout σαν Thomas */
+/* ===== GRID ===== */
 .full-grid {
   display: grid;
-  grid-template-columns: 280px 700px;  /* 👉 ΣΤΑΘΕΡΟ width όπως Thomas */
-  gap: 140px;                          /* 👉 μεγάλο κενό */
+  grid-template-columns: 260px 1fr;
+  gap: 120px;
 }
 
+/* ===== TITLES ===== */
 .full-left h2 {
-  font-size: 48px;
+  font-size: 46px;
   font-weight: 300;
+  line-height: 1.2;
 }
 
+/* ===== TEXT ===== */
 .full-right p {
   font-size: 22px;
 }
@@ -141,20 +128,14 @@ body {
   font-size: 20px;
 }
 
-.navbar {
-  border-bottom: 1px solid #eee;
-  position: sticky;
-  top: 0;
-  background: white;
-  z-index: 1000;
+/* ===== JOB ===== */
+.job {
+  margin-bottom: 30px;
 }
 
-.nav-inner {
-  max-width: 1250px;
-  margin: auto;
-  padding: 20px 0;        /* όχι left padding */
-  display: flex;
-  gap: 40px;
+.year {
+  color: #cc0000;
+  font-weight: bold;
 }
 
 </style>
@@ -168,7 +149,7 @@ body {
   <div class="nav-inner">
     <a href="#about">About me</a>
     <a href="#teaching">Teaching</a>
-    <a href="#publications">Publications</a>
+    <a href="#experience">Experience</a>
     <a href="#research">Research Topics</a>
   </div>
 </div>
@@ -195,53 +176,32 @@ body {
   <h2>About me</h2>
 
   <p>
-    I hold a PhD in Nuclear Physics from the Department of Physics at Aristotle University of Thessaloniki, with research activity focused on the experimental and computational study of nuclear reactions, nuclear data evaluation, and applications of nuclear physics in astrophysics, space science, and medical physics.
+    I hold a PhD in Nuclear Physics from the Department of Physics at Aristotle University of Thessaloniki...
   </p>
 
   <p>
-    I have worked as a postdoctoral researcher at the Institute of Nuclear and Particle Physics of NCSR Demokritos, Aristotle University of Thessaloniki, Culham Centre for Fusion Energy (UK), LAPP (France), and CERN (ISOLDE and n-TOF collaboration). I also collaborate with the International Atomic Energy Agency (IAEA).
+    I have worked as a postdoctoral researcher at NCSR Demokritos, AUTH, Culham, LAPP, CERN...
   </p>
 
   <p>
-    My research includes nuclear reaction experiments, cross section evaluation, R-matrix calculations, and Monte Carlo simulations using Geant4.
+    My research includes nuclear reaction experiments, R-matrix calculations, and Monte Carlo simulations.
   </p>
-
-<!-- 
-  EXPERIENCE  <div class="section">
-    <h3>Professional Experience</h3>
-
-    <div class="job">
-      <p class="year">01/2025 – present</p>
-      <p><b>Research Associate</b></p>
-      <p>International Atomic Energy Agency (IAEA)</p>
-    </div>
-
-    <div class="job">
-      <p class="year">05/2024 – present</p>
-      <p><b>Research Associate</b></p>
-      <p>CERN (n-TOF)</p>
-    </div>
- -->
-
-  </div>
 
 </div>
 
-</div> <!-- END CONTAINER -->
+</div>
 
-<!-- 🔥 PROFESSIONAL EXPERIENCE FULL WIDTH -->
+<!-- EXPERIENCE -->
 <div class="full-section" id="experience">
 
   <div class="full-inner">
 
     <div class="full-grid">
 
-      <!-- LEFT TITLE -->
       <div class="full-left">
         <h2>Professional Experience</h2>
       </div>
 
-      <!-- RIGHT CONTENT -->
       <div class="full-right">
 
         <div class="job">
@@ -264,7 +224,7 @@ body {
 
 </div>
 
-<!-- 🔥 TEACHING FULL WIDTH -->
+<!-- TEACHING -->
 <div class="full-section" id="teaching">
 
   <div class="full-inner">
@@ -279,17 +239,15 @@ body {
 
         <p>
           Currently, I contribute to postgraduate teaching in Radiation Physics,
-          Dosimetry, and Monte Carlo simulations, with emphasis on Geant4-based
-          modelling and nuclear applications.
+          Dosimetry, and Monte Carlo simulations.
         </p>
 
         <ul>
           <li>Radiation Physics and Dosimetry</li>
           <li>Monte Carlo simulations (Geant4)</li>
           <li>Nuclear reaction modelling</li>
-          <li>Detector physics and instrumentation</li>
+          <li>Detector physics</li>
           <li>Astrophysical nuclear processes</li>
-          <li>R-matrix methods</li>
         </ul>
 
       </div>
@@ -299,6 +257,9 @@ body {
   </div>
 
 </div>
+
+</body>
+</html>
 
 
 
