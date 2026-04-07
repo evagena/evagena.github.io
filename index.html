@@ -1,262 +1,435 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Nelli Vagena</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nelli Vagena</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<style>
+    :root {
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --bg-alt: #f9fafb;
+      --max: 980px;
+    }
 
-/* ===== BASE ===== */
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont,
-               "Segoe UI", Roboto, "Helvetica Neue",
-               Arial, sans-serif;
-  background: #ffffff;
-  color: #111;
-  line-height: 1.9;
-}
+    html { scroll-behavior: smooth; }
 
-/* ===== GLOBAL ALIGNMENT (🔥 ΤΟ ΚΛΕΙΔΙ) ===== */
-.container,
-.full-inner,
-.nav-inner {
-  max-width: 1250px;
-  margin: auto;
-  padding-left: 80px;
-  padding-right: 40px;
-}
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #fff;
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
 
-/* ===== NAVBAR ===== */
-.navbar {
-  position: sticky;
-  top: 0;
-  background: white;
-  border-bottom: 1px solid #eee;
-  z-index: 1000;
-}
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+    .nav-wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .nav-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.3px;
+    }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
 
-.nav-inner {
-  display: flex;
-  gap: 40px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
+    /* ── HERO ── */
+    .hero {
+      max-width: var(--max);
+      margin: 80px auto 0;
+      padding: 0 32px 80px;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .hero-photo img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-info h1 {
+      font-size: 36px;
+      font-weight: 600;
+      letter-spacing: -0.8px;
+      line-height: 1.15;
+      margin-bottom: 6px;
+    }
+    .hero-role {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .hero-uni {
+      font-size: 14px;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+    .hero-bio {
+      font-size: 15.5px;
+      color: #374151;
+      max-width: 600px;
+      line-height: 1.75;
+    }
+    .hero-bio p + p { margin-top: 14px; }
 
-.navbar a {
-  text-decoration: none;
-  color: #333;
-  font-size: 19px;
-}
+    /* ── TAGS ── */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+    .tag {
+      font-size: 12.5px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 500;
+    }
 
-.navbar a:hover {
-  color: #2d6cdf;
-}
+    /* ── DIVIDER ── */
+    .divider {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 32px;
+      border: none;
+      border-top: 1px solid var(--border);
+    }
 
-/* ===== ABOUT ===== */
-.container {
-  margin-top: 90px;
-  display: grid;
-  grid-template-columns: 400px 1fr;
-  gap: 100px;
-}
+    /* ── SECTION ── */
+    section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 72px 32px;
+    }
+    .section-alt {
+      background: var(--bg-alt);
+    }
+    .section-alt section {
+      /* section inner stays same width */
+    }
+    .section-wrap {
+      background: var(--bg-alt);
+      padding: 0;
+    }
+    .section-wrap > section {
+      background: transparent;
+    }
 
-/* ===== LEFT ===== */
-.left {
-  text-align: center;
-}
+    /* ── SECTION HEADER ── */
+    .sec-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .sec-title {
+      font-size: 26px;
+      font-weight: 600;
+      letter-spacing: -0.4px;
+      margin-bottom: 36px;
+    }
 
-.left img {
-  width: 260px;
-  border-radius: 50%;
-}
+    /* ── TWO-COL ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 48px;
+    }
+    .col-label {
+      font-size: 13px;
+      color: var(--muted);
+      padding-top: 2px;
+    }
+    .col-content p, .col-content li {
+      font-size: 15.5px;
+      color: #374151;
+    }
 
-.left h1 {
-  font-size: 46px;
-  font-weight: 200;
-}
+    /* ── EXPERIENCE ITEMS ── */
+    .exp-list { display: flex; flex-direction: column; gap: 28px; }
+    .exp-item {}
+    .exp-period {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.2px;
+      margin-bottom: 2px;
+    }
+    .exp-role {
+      font-size: 15.5px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 1px;
+    }
+    .exp-org {
+      font-size: 14.5px;
+      color: var(--muted);
+    }
+    .exp-desc {
+      font-size: 14px;
+      color: #4b5563;
+      margin-top: 4px;
+    }
 
-.subtitle {
-  font-size: 20px;
-  color: #555;
-}
+    /* ── TEACHING LIST ── */
+    .teach-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .teach-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15.5px;
+      color: #374151;
+    }
+    .teach-list li::before {
+      content: "→";
+      color: var(--accent);
+      font-size: 14px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
 
-.uni {
-  color: #2d6cdf;
-  font-size: 18px;
-}
+    /* ── RESEARCH CARDS ── */
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .research-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 22px 20px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .research-card:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+    }
+    .research-card .icon {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+    .research-card h3 {
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .research-card p {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
 
-/* ===== RIGHT ===== */
-.right h2 {
-  font-size: 44px;
-  font-weight: 400;
-}
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
 
-.right p {
-  font-size: 22px;
-  font-weight: 300;
-  color: #333;
-}
-
-/* ===== FULL SECTIONS ===== */
-.full-section {
-  background: #f2f2f2;
-  padding: 120px 0;
-}
-
-/* ===== GRID ===== */
-.full-grid {
-  display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 100px;
-}
-
-/* ===== TITLES ===== */
-.full-left h2 {
-  font-size: 46px;
-  font-weight: 300;
-}
-
-/* ===== TEXT ===== */
-.full-right p {
-  font-size: 22px;
-}
-
-.full-right ul {
-  font-size: 20px;
-}
-
-/* ===== JOB ===== */
-.job {
-  margin-bottom: 28px;
-}
-
-.year {
-  color: #cc0000;
-  font-weight: bold;
-}
-
-</style>
-
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        margin-top: 40px;
+        padding-bottom: 48px;
+      }
+      .hero-photo img { width: 130px; height: 130px; }
+      .two-col { grid-template-columns: 1fr; gap: 24px; }
+      .research-grid { grid-template-columns: 1fr; }
+      .nav-name { display: none; }
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar">
-  <div class="nav-inner">
-    <a href="#about">About me</a>
-    <a href="#teaching">Teaching</a>
-    <a href="#experience">Experience</a>
-    <a href="#research">Research Topics</a>
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-wrap">
+    <a class="nav-name" href="#top">Nelli Vagena</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero" id="top">
+  <div class="hero-photo">
+    <img src="foto_clean.jpg" alt="Nelli Vagena">
+  </div>
+  <div class="hero-info" id="about">
+    <h1>Nelli Vagena</h1>
+    <p class="hero-role">Experimental Nuclear Physics · Radiation Physics · Monte Carlo</p>
+    <p class="hero-uni">Aristotle University of Thessaloniki</p>
+    <div class="hero-bio">
+      <p>I hold a PhD in Nuclear Physics from the Department of Physics at Aristotle University of Thessaloniki, with research activity focused on the experimental and computational study of nuclear reactions, nuclear data evaluation, and applications of nuclear physics in astrophysics, space science, and medical physics.</p>
+      <p>I have worked as a postdoctoral researcher at the Institute of Nuclear and Particle Physics of NCSR Demokritos, Aristotle University of Thessaloniki, Culham Centre for Fusion Energy (UK), LAPP (France), and CERN (ISOLDE and n-TOF collaboration). I also collaborate with the International Atomic Energy Agency (IAEA).</p>
+      <p>My research includes nuclear reaction experiments, cross section evaluation, R-matrix calculations, and Monte Carlo simulations using Geant4.</p>
+    </div>
+    <div class="tags">
+      <span class="tag">Nuclear Reactions</span>
+      <span class="tag">Geant4</span>
+      <span class="tag">Monte Carlo</span>
+      <span class="tag">R-matrix</span>
+      <span class="tag">Radiation Physics</span>
+      <span class="tag">Nuclear Astrophysics</span>
+      <span class="tag">CERN n-TOF</span>
+      <span class="tag">IAEA</span>
+    </div>
   </div>
 </div>
 
-<!-- ABOUT -->
-<div class="container">
+<!-- ── EXPERIENCE ── -->
+<div class="section-wrap" id="experience">
+  <section>
+    <div class="sec-label">Career</div>
+    <div class="sec-title">Professional Experience</div>
+    <div class="exp-list">
 
-<div class="left">
-  <img src="foto_clean.jpg">
-  <h1>Nelli Vagena</h1>
-
-  <p class="subtitle">
-    Experimental Nuclear Physics <br>
-    Radiation Physics | Geant4 | Monte Carlo
-  </p>
-
-  <p class="uni">
-    Aristotle University of Thessaloniki
-  </p>
-</div>
-
-<div class="right" id="about">
-
-  <h2>About me</h2>
-
-  <p>
-    I hold a PhD in Nuclear Physics from the Department of Physics at Aristotle University of Thessaloniki, with research activity focused on the experimental and computational study of nuclear reactions, nuclear data evaluation, and applications of nuclear physics in astrophysics, space science, and medical physics.
-  </p>
-
-  <p>
-    I have worked as a postdoctoral researcher at the Institute of Nuclear and Particle Physics of NCSR Demokritos, Aristotle University of Thessaloniki, Culham Centre for Fusion Energy (UK), LAPP (France), and CERN (ISOLDE and n-TOF collaboration). I also collaborate with the International Atomic Energy Agency (IAEA).
-  </p>
-
-  <p>
-    My research includes nuclear reaction experiments, cross section evaluation, R-matrix calculations, and Monte Carlo simulations using Geant4.
-  </p>
-
-</div>
-
-</div>
-
-<!-- EXPERIENCE -->
-<div class="full-section" id="experience">
-
-  <div class="full-inner">
-
-    <div class="full-grid">
-
-      <div class="full-left">
-        <h2>Professional Experience</h2>
+      <div class="exp-item">
+        <div class="exp-period">01/2025 – present</div>
+        <div class="exp-role">Research Associate</div>
+        <div class="exp-org">International Atomic Energy Agency (IAEA)</div>
       </div>
 
-      <div class="full-right">
+      <div class="exp-item">
+        <div class="exp-period">05/2024 – present</div>
+        <div class="exp-role">Research Associate</div>
+        <div class="exp-org">CERN — n-TOF Collaboration</div>
+      </div>
 
-        <div class="job">
-          <p class="year">01/2025 – present</p>
-          <p><b>Research Associate</b></p>
-          <p>International Atomic Energy Agency (IAEA)</p>
-        </div>
-
-        <div class="job">
-          <p class="year">05/2024 – present</p>
-          <p><b>Research Associate</b></p>
-          <p>CERN (n-TOF)</p>
-        </div>
-
+      <div class="exp-item">
+        <div class="exp-period">Previous positions</div>
+        <div class="exp-role">Postdoctoral Researcher</div>
+        <div class="exp-org">NCSR Demokritos · AUTH · Culham Centre for Fusion Energy (UK) · LAPP (France) · CERN ISOLDE</div>
       </div>
 
     </div>
-
-  </div>
-
+  </section>
 </div>
 
-<!-- TEACHING -->
-<div class="full-section" id="teaching">
+<!-- ── RESEARCH ── -->
+<section id="research">
+  <div class="sec-label">Science</div>
+  <div class="sec-title">Research Topics</div>
+  <div class="research-grid">
 
-  <div class="full-inner">
+    <div class="research-card">
+      <div class="icon">⚛️</div>
+      <h3>Nuclear Reactions &amp; Cross Sections</h3>
+      <p>Experimental measurement and evaluation of nuclear reaction cross sections for astrophysical and applied physics.</p>
+    </div>
 
-    <div class="full-grid">
+    <div class="research-card">
+      <div class="icon">🌌</div>
+      <h3>Nuclear Astrophysics</h3>
+      <p>Study of nuclear processes driving stellar nucleosynthesis and energy generation in stars.</p>
+    </div>
 
-      <div class="full-left">
-        <h2>Teaching</h2>
-      </div>
+    <div class="research-card">
+      <div class="icon">🖥️</div>
+      <h3>Monte Carlo Simulations</h3>
+      <p>Geant4-based simulations for detector modelling, radiation transport, and nuclear applications.</p>
+    </div>
 
-      <div class="full-right">
+    <div class="research-card">
+      <div class="icon">📐</div>
+      <h3>R-matrix Calculations</h3>
+      <p>Nuclear data evaluation using R-matrix theory for precise reaction rate determinations.</p>
+    </div>
 
-        <p>
-          Currently, I contribute to postgraduate teaching in Radiation Physics,
-          Dosimetry, and Monte Carlo simulations, with emphasis on Geant4-based
-          modelling and nuclear applications.
-        </p>
+    <div class="research-card">
+      <div class="icon">🏥</div>
+      <h3>Medical Physics</h3>
+      <p>Application of nuclear physics methods to radiation dosimetry and medical imaging problems.</p>
+    </div>
 
-        <ul>
-          <li>Radiation Physics and Dosimetry</li>
-          <li>Monte Carlo simulations (Geant4)</li>
-          <li>Nuclear reaction modelling</li>
-          <li>Detector physics and instrumentation</li>
-          <li>Astrophysical nuclear processes</li>
-          <li>R-matrix methods</li>
-        </ul>
-
-      </div>
-
+    <div class="research-card">
+      <div class="icon">🛸</div>
+      <h3>Space Science</h3>
+      <p>Radiation environment studies and nuclear data applications for space missions and satellite instrumentation.</p>
     </div>
 
   </div>
+</section>
 
+<!-- ── TEACHING ── -->
+<div class="section-wrap" id="teaching">
+  <section>
+    <div class="sec-label">Education</div>
+    <div class="sec-title">Teaching</div>
+    <p style="font-size:15.5px; color:#374151; max-width:620px; margin-bottom:32px;">
+      I contribute to postgraduate teaching in Radiation Physics, Dosimetry, and Monte Carlo simulations, with emphasis on Geant4-based modelling and nuclear applications.
+    </p>
+    <ul class="teach-list">
+      <li>Radiation Physics and Dosimetry</li>
+      <li>Monte Carlo simulations (Geant4)</li>
+      <li>Nuclear reaction modelling</li>
+      <li>Detector physics and instrumentation</li>
+      <li>Astrophysical nuclear processes</li>
+      <li>R-matrix methods</li>
+    </ul>
+  </section>
 </div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p>Nelli Vagena · Aristotle University of Thessaloniki · <a href="mailto:evagena@gmail.com">evagena@gmail.com</a></p>
+</footer>
 
 </body>
 </html>
