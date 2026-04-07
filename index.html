@@ -20,17 +20,25 @@ body {
 /* ===== NAVBAR ===== */
 .navbar {
   display: flex;
-  justify-content: center;
-  gap: 50px;
-  padding: 20px;
+  justify-content: flex-start;
+  padding: 20px 60px;
+  gap: 40px;
   border-bottom: 1px solid #eee;
 }
 
 .navbar a {
   text-decoration: none;
   color: #333;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 19px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1000;
 }
 
 .navbar a:hover {
