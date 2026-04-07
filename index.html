@@ -142,6 +142,44 @@ a:hover {
   text-decoration: underline;
 }
 
+/* ===== GREY BLOCK ===== */
+.teaching-box {
+  background: #f2f2f2;
+  padding: 60px 70px;
+  border-radius: 8px;
+}
+
+/* ===== GRID ===== */
+.teaching-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 80px;
+}
+
+/* ===== LEFT TITLE ===== */
+.teaching-left h2 {
+  font-size: 48px;
+  font-weight: 300;
+  margin: 0;
+}
+
+/* ===== RIGHT TEXT ===== */
+.teaching-right p {
+  font-size: 22px;
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+.teaching-right ul {
+  font-size: 20px;
+  line-height: 1.8;
+  padding-left: 20px;
+}
+
+.teaching-right li {
+  margin-bottom: 10px;
+}
+
 </style>
 
 </head>
@@ -262,36 +300,42 @@ a:hover {
   
 <div class="section teaching-section" id="teaching">
 
-  <div class="teaching-grid">
+  <div class="teaching-box">
 
-    <!-- LEFT TITLE -->
-    <div class="teaching-left">
-      <h2>Teaching</h2>
-    </div>
+    <div class="teaching-grid">
 
-    <!-- RIGHT CONTENT -->
-    <div class="teaching-right">
+      <!-- LEFT -->
+      <div class="teaching-left">
+        <h2>Teaching</h2>
+      </div>
 
-      <p>
-        Currently, I contribute to postgraduate teaching in Radiation Physics,
-        Dosimetry, and Monte Carlo simulations, with emphasis on Geant4-based
-        modelling and nuclear applications.
-      </p>
+      <!-- RIGHT -->
+      <div class="teaching-right">
 
-      <ul>
-        <li>Radiation Physics and Dosimetry</li>
-        <li>Monte Carlo simulations (Geant4)</li>
-        <li>Nuclear reaction modelling</li>
-        <li>Detector physics and instrumentation</li>
-        <li>Astrophysical nuclear processes</li>
-        <li>R-matrix methods</li>
-      </ul>
+        <p>
+          Currently, I contribute to postgraduate teaching in Radiation Physics,
+          Dosimetry, and Monte Carlo simulations, with emphasis on Geant4-based
+          modelling and nuclear applications.
+        </p>
+
+        <ul>
+          <li>Radiation Physics and Dosimetry</li>
+          <li>Monte Carlo simulations (Geant4)</li>
+          <li>Nuclear reaction modelling</li>
+          <li>Detector physics and instrumentation</li>
+          <li>Astrophysical nuclear processes</li>
+          <li>R-matrix methods</li>
+        </ul>
+
+      </div>
 
     </div>
 
   </div>
 
 </div>
+
+
 
   <!-- PROJECTS -->
   <div class="section">
