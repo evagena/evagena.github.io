@@ -263,6 +263,145 @@
       .hero-photo img { width: 150px; height: 150px; }
       .research-grid { grid-template-columns: 1fr; }
     }
+
+    /* PUBLICATIONS */
+    .pub-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .pub-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #fff;
+      transition: box-shadow 0.2s;
+    }
+    .pub-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+    .pub-cover-link { flex-shrink: 0; }
+    .pub-cover {
+      width: 72px;
+      height: 96px;
+      object-fit: cover;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      display: block;
+    }
+    .pub-info { flex: 1; }
+    .pub-num {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 2px 8px;
+      border-radius: 999px;
+      margin-right: 8px;
+    }
+    .pub-year {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .pub-authors {
+      font-size: 13.5px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+    .pub-title {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+    .pub-title a {
+      color: var(--text);
+      text-decoration: none;
+    }
+    .pub-title a:hover { color: var(--accent); text-decoration: underline; }
+    .pub-journal {
+      font-size: 13px;
+      color: var(--accent);
+      font-weight: 500;
+      margin-top: 4px;
+      font-style: italic;
+    }
+
+
+    /* ── PUBLICATIONS ── */
+    .pub-section-title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--border);
+    }
+    /* Featured grid */
+    .feat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 56px;
+    }
+    .feat-card {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      text-decoration: none;
+      background: #fff;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .feat-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.10); transform: translateY(-3px); }
+    .feat-cover {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .feat-info { padding: 14px; }
+    .feat-authors { font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+    .feat-title { font-size: 13.5px; font-weight: 600; color: var(--text); line-height: 1.45; margin-bottom: 6px; }
+    .feat-journal { font-size: 12px; color: var(--accent); font-style: italic; font-weight: 500; }
+    /* Recent list */
+    .rec-list { display: flex; flex-direction: column; gap: 12px; }
+    .rec-item {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #fff;
+      text-decoration: none;
+      transition: box-shadow 0.15s;
+    }
+    .rec-item:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.07); }
+    .rec-cover {
+      width: 44px;
+      height: 58px;
+      object-fit: cover;
+      border-radius: 3px;
+      flex-shrink: 0;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+    }
+    .rec-info { flex: 1; }
+    .rec-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 3px; }
+    .rec-num { font-size: 11px; font-weight: 700; color: var(--accent); background: var(--accent-soft); padding: 1px 7px; border-radius: 999px; }
+    .rec-year { font-size: 12px; color: var(--muted); font-weight: 500; }
+    .rec-authors { font-size: 12px; color: var(--muted); }
+    .rec-title { font-size: 14.5px; font-weight: 500; color: var(--text); line-height: 1.4; }
+    .rec-journal { font-size: 12.5px; color: var(--accent); font-style: italic; margin-top: 2px; }
+    /* Remove old pub styles */
+    .pub-list, .pub-item, .pub-cover, .pub-info, .pub-num, .pub-year, .pub-authors, .pub-title, .pub-journal { all: unset; }
+
   </style>
 </head>
 <body>
@@ -304,6 +443,7 @@
       <span class="tag">R-matrix</span>
       <span class="tag">Radiation Physics</span>
       <span class="tag">Nuclear Astrophysics</span>
+      <span class="tag">CERN n-TOF</span>
       <span class="tag">IAEA</span>
     </div>
   </div>
@@ -404,89 +544,145 @@
 <div class="section-wrap" id="teaching">
   <section>
     <div class="sec-title">Teaching</div>
-    
-    <p style="font-size:15.5px; color:#374151; max-width:620px; margin-bottom:20px;">
-      Instructor for the graduate-level course 
-      <strong>“Radiation Physics – Dosimetry and Applications”</strong>, 
-      offered within the Graduate Program 
-      <strong>“SubAtomic Physics and Technological Applications”</strong> 
-      (Spring 2026).
+    <p style="font-size:15.5px; color:#374151; max-width:620px; margin-bottom:32px;">
+      I contribute to postgraduate teaching in Radiation Physics, Dosimetry, and Monte Carlo simulations, with emphasis on Geant4-based modelling and nuclear applications.
     </p>
-    
+    <ul class="teach-list">
+      <li>Radiation Physics and Dosimetry</li>
+      <li>Monte Carlo simulations (Geant4)</li>
+      <li>Nuclear reaction modelling</li>
+      <li>Detector physics and instrumentation</li>
+      <li>Astrophysical nuclear processes</li>
+      <li>R-matrix methods</li>
+    </ul>
   </section>
 </div>
 
 
 <!-- PUBLICATIONS -->
-<div class="section-wrap" id="publications">
-  <section>
-    <div class="sec-title">Selected Publications</div>
+<section id="publications">
+  <div class="sec-title">Publications</div>
 
-    <ul class="pub-list" style="font-size:15.5px; color:#374151; max-width:620px;">
+  <div class="pub-section-title">Featured Publications</div>
+  <div class="feat-grid">
+        <a href="https://doi.org/10.1140/epja/s10050-024-01413-4" target="_blank" class="feat-card">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MCIgaGVpZ2h0PSIxMjAiIHZpZXdCb3g9IjAgMCA5MCAxMjAiPgogIDxyZWN0IHdpZHRoPSI5MCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiNGMEZGRjQiLz4KICA8cmVjdCB3aWR0aD0iOTAiIGhlaWdodD0iMzIiIGZpbGw9IiMxYTZlM2MiLz4KICA8dGV4dCB4PSI0NSIgeT0iMjEiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iYm9sZCIgCiAgICAgICAgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkV1ci4gUGh5cy4gSi4gQTwvdGV4dD4KICA8bGluZSB4MT0iMCIgeTE9IjMyIiB4Mj0iOTAiIHkyPSIzMiIgc3Ryb2tlPSIjMWE2ZTNjIiBzdHJva2Utd2lkdGg9IjEiLz4KICA8dGV4dCB4PSI0NSIgeT0iNTgiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjUuNSIgZmlsbD0iIzMzMyIgCiAgICAgICAgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSI+RXVyb3BlYW4gUGh5c2ljYWw8L3RleHQ+CiAgPHRleHQgeD0iNDUiIHk9IjY3IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSI1LjUiIGZpbGw9IiMzMzMiIAogICAgICAgIHRleHQtYW5jaG9yPSJtaWRkbGUiPkpvdXJuYWwgQTwvdGV4dD4KICA8cmVjdCB4PSI4IiB5PSI3OCIgd2lkdGg9Ijc0IiBoZWlnaHQ9IjMyIiByeD0iMiIgZmlsbD0iIzFhNmUzYyIgb3BhY2l0eT0iMC4xMiIvPgogIDx0ZXh0IHg9IjQ1IiB5PSI5OCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNyIgZmlsbD0iIzFhNmUzYyIgCiAgICAgICAgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9ImJvbGQiPk5VQ0xFQVIgUEhZU0lDUzwvdGV4dD4KPC9zdmc+" alt="European Physical Journal A" class="feat-cover">
+          <div class="feat-info">
+            <div class="feat-authors">Vagena et al.</div>
+            <div class="feat-title">Neutron capture cross-section of p-nucleus ⁷⁴Se in the keV region using the activation method</div>
+            <div class="feat-journal">European Physical Journal A · 2024</div>
+          </div>
+        </a>
+        <a href="https://doi.org/10.1103/PhysRevC.103.045806" target="_blank" class="feat-card">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MCIgaGVpZ2h0PSIxMjAiIHZpZXdCb3g9IjAgMCA5MCAxMjAiPgogIDxyZWN0IHdpZHRoPSI5MCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiNGRkY4RjgiLz4KICA8cmVjdCB3aWR0aD0iOTAiIGhlaWdodD0iMzIiIGZpbGw9IiM4QjAwMDAiLz4KICA8dGV4dCB4PSI0NSIgeT0iMjEiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iYm9sZCIgCiAgICAgICAgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlBoeXMuIFJldi4gQzwvdGV4dD4KICA8bGluZSB4MT0iMCIgeTE9IjMyIiB4Mj0iOTAiIHkyPSIzMiIgc3Ryb2tlPSIjOEIwMDAwIiBzdHJva2Utd2lkdGg9IjEiLz4KICA8dGV4dCB4PSI0NSIgeT0iNTgiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjUuNSIgZmlsbD0iIzMzMyIgCiAgICAgICAgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSI+UGh5c2ljYWw8L3RleHQ+CiAgPHRleHQgeD0iNDUiIHk9IjY3IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSI1LjUiIGZpbGw9IiMzMzMiIAogICAgICAgIHRleHQtYW5jaG9yPSJtaWRkbGUiPlJldmlldyBDPC90ZXh0PgogIDxyZWN0IHg9IjgiIHk9Ijc4IiB3aWR0aD0iNzQiIGhlaWdodD0iMzIiIHJ4PSIyIiBmaWxsPSIjOEIwMDAwIiBvcGFjaXR5PSIwLjEyIi8+CiAgPHRleHQgeD0iNDUiIHk9Ijk4IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSI3IiBmaWxsPSIjOEIwMDAwIiAKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iYm9sZCI+TlVDTEVBUiBQSFlTSUNTPC90ZXh0Pgo8L3N2Zz4=" alt="Physical Review C" class="feat-cover">
+          <div class="feat-info">
+            <div class="feat-authors">Vagena et al.</div>
+            <div class="feat-title">Systematics of the semimicroscopic proton-nucleus optical potential at low energies relevant for nuclear astrophysics</div>
+            <div class="feat-journal">Physical Review C · 2021</div>
+          </div>
+        </a>
+        <a href="https://doi.org/10.1016/j.nimb.2020.02.003" target="_blank" class="feat-card">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MCIgaGVpZ2h0PSIxMjAiIHZpZXdCb3g9IjAgMCA5MCAxMjAiPgogIDxyZWN0IHdpZHRoPSI5MCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiNGMEY0RkYiLz4KICA8cmVjdCB3aWR0aD0iOTAiIGhlaWdodD0iMzIiIGZpbGw9IiMwMDMwODciLz4KICA8dGV4dCB4PSI0NSIgeT0iMjEiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iYm9sZCIgCiAgICAgICAgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk5JTSBBPC90ZXh0PgogIDxsaW5lIHgxPSIwIiB5MT0iMzIiIHgyPSI5MCIgeTI9IjMyIiBzdHJva2U9IiMwMDMwODciIHN0cm9rZS13aWR0aD0iMSIvPgogIDx0ZXh0IHg9IjQ1IiB5PSI1OCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNS41IiBmaWxsPSIjMzMzIiAKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5OdWNsZWFyIEluc3RydW1lbnRzPC90ZXh0PgogIDx0ZXh0IHg9IjQ1IiB5PSI2NyIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNS41IiBmaWxsPSIjMzMzIiAKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIj4mIE1ldGhvZHMgQTwvdGV4dD4KICA8cmVjdCB4PSI4IiB5PSI3OCIgd2lkdGg9Ijc0IiBoZWlnaHQ9IjMyIiByeD0iMiIgZmlsbD0iIzAwMzA4NyIgb3BhY2l0eT0iMC4xMiIvPgogIDx0ZXh0IHg9IjQ1IiB5PSI5OCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNyIgZmlsbD0iIzAwMzA4NyIgCiAgICAgICAgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9ImJvbGQiPk5VQ0xFQVIgUEhZU0lDUzwvdGV4dD4KPC9zdmc+" alt="Nuclear Instruments and Methods B" class="feat-cover">
+          <div class="feat-info">
+            <div class="feat-authors">Vagena et al.</div>
+            <div class="feat-title">A comparative study of stopping power calculations implemented in Monte Carlo codes and compilations with experimental data</div>
+            <div class="feat-journal">Nuclear Instruments and Methods B · 2020</div>
+          </div>
+        </a>
+        <a href="https://doi.org/10.1016/j.radphyschem.2015.11.030" target="_blank" class="feat-card">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MCIgaGVpZ2h0PSIxMjAiIHZpZXdCb3g9IjAgMCA5MCAxMjAiPgogIDxyZWN0IHdpZHRoPSI5MCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiNGRkY4RjAiLz4KICA8cmVjdCB3aWR0aD0iOTAiIGhlaWdodD0iMzIiIGZpbGw9IiNiMzVjMDAiLz4KICA8dGV4dCB4PSI0NSIgeT0iMjEiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iYm9sZCIgCiAgICAgICAgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlJhZC4gUGh5cy4gQ2hlbS48L3RleHQ+CiAgPGxpbmUgeDE9IjAiIHkxPSIzMiIgeDI9IjkwIiB5Mj0iMzIiIHN0cm9rZT0iI2IzNWMwMCIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgPHRleHQgeD0iNDUiIHk9IjU4IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSI1LjUiIGZpbGw9IiMzMzMiIAogICAgICAgIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPlJhZGlhdGlvbiBQaHlzaWNzPC90ZXh0PgogIDx0ZXh0IHg9IjQ1IiB5PSI2NyIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNS41IiBmaWxsPSIjMzMzIiAKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5hbmQgQ2hlbWlzdHJ5PC90ZXh0PgogIDxyZWN0IHg9IjgiIHk9Ijc4IiB3aWR0aD0iNzQiIGhlaWdodD0iMzIiIHJ4PSIyIiBmaWxsPSIjYjM1YzAwIiBvcGFjaXR5PSIwLjEyIi8+CiAgPHRleHQgeD0iNDUiIHk9Ijk4IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSI3IiBmaWxsPSIjYjM1YzAwIiAKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iYm9sZCI+TlVDTEVBUiBQSFlTSUNTPC90ZXh0Pgo8L3N2Zz4=" alt="Radiation Physics and Chemistry" class="feat-cover">
+          <div class="feat-info">
+            <div class="feat-authors">Vagena et al.</div>
+            <div class="feat-title">Geant4 simulations on medical Linac operation at 18MV: Experimental validation based on activation foils</div>
+            <div class="feat-journal">Radiation Physics and Chemistry · 2016</div>
+          </div>
+        </a>
+  </div>
 
-      <li>
-        <strong>Balibrea-Correa et al.</strong>, New generation of detectors for neutron-capture experiments,
-        <em>Nuclear Instruments and Methods A</em>, 1072, 170110 (2025).
-        <br><a href="https://doi.org/10.1016/j.nima.2024.170110" target="_blank">DOI</a>
-      </li>
-
-      <li>
-        <strong>Harissopulos et al.</strong>, (α,γ) reactions on zinc isotopes,
-        <em>European Physical Journal Plus</em>, 140(5), 378 (2025).
-        <br><a href="https://doi.org/10.1140/epjp/s13360-025-06303-2" target="_blank">DOI</a>
-      </li>
-
-      <li>
-        <strong>Vagena et al.</strong>, Neutron capture cross-section of 74Se,
-        <em>European Physical Journal A</em>, 60(10), 213 (2024).
-        <br><a href="https://doi.org/10.1140/epja/s10050-024-01413-4" target="_blank">DOI</a>
-      </li>
-
-      <li>
-        <strong>Perkowski et al.</strong>, Multi-section fission ionisation chamber,
-        <em>Nuclear Instruments and Methods A</em>, 1067, 169649 (2024).
-        <br><a href="https://doi.org/10.1016/j.nima.2024.169649" target="_blank">DOI</a>
-      </li>
-
-      <li>
-        <strong>Alcayne et al.</strong>, Segmented detector for (n,γ) measurements,
-        <em>Radiation Physics and Chemistry</em>, 217, 111525 (2024).
-        <br><a href="https://doi.org/10.1016/j.radphyschem.2024.111525" target="_blank">DOI</a>
-      </li>
-
-      <li>
-        <strong>Vagena et al.</strong>, Systematics of the semimicroscopic proton-nucleus optical potential,
-        <em>Physical Review C</em>, 103(4), 045806 (2021).
-        <br><a href="https://doi.org/10.1103/PhysRevC.103.045806" target="_blank">DOI</a>
-      </li>
-
-      <li>
-        <strong>Vagena et al.</strong>, Stopping power calculations comparison,
-        <em>Nuclear Instruments and Methods B</em>, 467, 44–52 (2020).
-        <br><a href="https://doi.org/10.1016/j.nimb.2020.02.003" target="_blank">DOI</a>
-      </li>
-
-      <li>
-        <strong>Vagena et al.</strong>, Thick-foils activation technique,
-        <em>Nuclear Instruments and Methods A</em>, 887, 64–69 (2018).
-        <br><a href="https://doi.org/10.1016/j.nima.2018.01.025" target="_blank">DOI</a>
-      </li>
-
-      <li>
-        <strong>Vagena et al.</strong>, Photodisintegration cross sections of dysprosium,
-        <em>European Physical Journal A</em>, 53, 85 (2017).
-        <br><a href="https://doi.org/10.1140/epja/i2017-12278-5" target="_blank">DOI</a>
-      </li>
-
-      <li>
-        <strong>Vagena et al.</strong>, Geant4 simulations on medical LINAC,
-        <em>Radiation Physics and Chemistry</em>, 120, 89–97 (2016).
-        <br><a href="https://doi.org/10.1016/j.radphyschem.2015.11.030" target="_blank">DOI</a>
-      </li>
-
-    </ul>
-  </section>
-</div>
+  <div class="pub-section-title">Recent Publications</div>
+  <div class="rec-list">
+        <a href="https://doi.org/10.1140/epjp/s13360-025-06303-2" target="_blank" class="rec-item">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MCIgaGVpZ2h0PSIxMjAiIHZpZXdCb3g9IjAgMCA5MCAxMjAiPgogIDxyZWN0IHdpZHRoPSI5MCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiNGMEY4RkYiLz4KICA8cmVjdCB3aWR0aD0iOTAiIGhlaWdodD0iMzIiIGZpbGw9IiMxYTVjOGEiLz4KICA8dGV4dCB4PSI0NSIgeT0iMjEiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iYm9sZCIgCiAgICAgICAgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkV1ci4gUGh5cy4gSi4gUGx1czwvdGV4dD4KICA8bGluZSB4MT0iMCIgeTE9IjMyIiB4Mj0iOTAiIHkyPSIzMiIgc3Ryb2tlPSIjMWE1YzhhIiBzdHJva2Utd2lkdGg9IjEiLz4KICA8dGV4dCB4PSI0NSIgeT0iNTgiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjUuNSIgZmlsbD0iIzMzMyIgCiAgICAgICAgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSI+RXVyb3BlYW4gUGh5c2ljYWw8L3RleHQ+CiAgPHRleHQgeD0iNDUiIHk9IjY3IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSI1LjUiIGZpbGw9IiMzMzMiIAogICAgICAgIHRleHQtYW5jaG9yPSJtaWRkbGUiPkpvdXJuYWwgUGx1czwvdGV4dD4KICA8cmVjdCB4PSI4IiB5PSI3OCIgd2lkdGg9Ijc0IiBoZWlnaHQ9IjMyIiByeD0iMiIgZmlsbD0iIzFhNWM4YSIgb3BhY2l0eT0iMC4xMiIvPgogIDx0ZXh0IHg9IjQ1IiB5PSI5OCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNyIgZmlsbD0iIzFhNWM4YSIgCiAgICAgICAgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9ImJvbGQiPk5VQ0xFQVIgUEhZU0lDUzwvdGV4dD4KPC9zdmc+" alt="European Physical Journal Plus" class="rec-cover">
+          <div class="rec-info">
+            <div class="rec-meta"><span class="rec-num">P32</span><span class="rec-year">2025</span><span class="rec-authors">Harissopulos et al.</span></div>
+            <div class="rec-title">Cross-section measurements of (α,γ) reactions on zinc isotopes using the 4πγ-summing method for astrophysics applications</div>
+            <div class="rec-journal">European Physical Journal Plus</div>
+          </div>
+        </a>
+        <a href="https://doi.org/10.1016/j.nima.2024.170110" target="_blank" class="rec-item">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MCIgaGVpZ2h0PSIxMjAiIHZpZXdCb3g9IjAgMCA5MCAxMjAiPgogIDxyZWN0IHdpZHRoPSI5MCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiNGMEY0RkYiLz4KICA8cmVjdCB3aWR0aD0iOTAiIGhlaWdodD0iMzIiIGZpbGw9IiMwMDMwODciLz4KICA8dGV4dCB4PSI0NSIgeT0iMjEiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iYm9sZCIgCiAgICAgICAgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk5JTSBBPC90ZXh0PgogIDxsaW5lIHgxPSIwIiB5MT0iMzIiIHgyPSI5MCIgeTI9IjMyIiBzdHJva2U9IiMwMDMwODciIHN0cm9rZS13aWR0aD0iMSIvPgogIDx0ZXh0IHg9IjQ1IiB5PSI1OCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNS41IiBmaWxsPSIjMzMzIiAKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5OdWNsZWFyIEluc3RydW1lbnRzPC90ZXh0PgogIDx0ZXh0IHg9IjQ1IiB5PSI2NyIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNS41IiBmaWxsPSIjMzMzIiAKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIj4mIE1ldGhvZHMgQTwvdGV4dD4KICA8cmVjdCB4PSI4IiB5PSI3OCIgd2lkdGg9Ijc0IiBoZWlnaHQ9IjMyIiByeD0iMiIgZmlsbD0iIzAwMzA4NyIgb3BhY2l0eT0iMC4xMiIvPgogIDx0ZXh0IHg9IjQ1IiB5PSI5OCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNyIgZmlsbD0iIzAwMzA4NyIgCiAgICAgICAgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9ImJvbGQiPk5VQ0xFQVIgUEhZU0lDUzwvdGV4dD4KPC9zdmc+" alt="Nuclear Instruments and Methods A" class="rec-cover">
+          <div class="rec-info">
+            <div class="rec-meta"><span class="rec-num">P31</span><span class="rec-year">2025</span><span class="rec-authors">Balibrea-Correa et al.</span></div>
+            <div class="rec-title">Towards a new generation of solid total-energy detectors for neutron-capture time-of-flight experiments</div>
+            <div class="rec-journal">Nuclear Instruments and Methods A</div>
+          </div>
+        </a>
+        <a href="https://doi.org/10.1016/j.atmosenv.2024.120929" target="_blank" class="rec-item">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MCIgaGVpZ2h0PSIxMjAiIHZpZXdCb3g9IjAgMCA5MCAxMjAiPgogIDxyZWN0IHdpZHRoPSI5MCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiNGMEZGRkYiLz4KICA8cmVjdCB3aWR0aD0iOTAiIGhlaWdodD0iMzIiIGZpbGw9IiMyYzdhN2IiLz4KICA8dGV4dCB4PSI0NSIgeT0iMjEiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iYm9sZCIgCiAgICAgICAgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkF0bS4gRW52aXJvbi48L3RleHQ+CiAgPGxpbmUgeDE9IjAiIHkxPSIzMiIgeDI9IjkwIiB5Mj0iMzIiIHN0cm9rZT0iIzJjN2E3YiIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgPHRleHQgeD0iNDUiIHk9IjU4IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSI1LjUiIGZpbGw9IiMzMzMiIAogICAgICAgIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPkF0bW9zcGhlcmljPC90ZXh0PgogIDx0ZXh0IHg9IjQ1IiB5PSI2NyIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNS41IiBmaWxsPSIjMzMzIiAKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5FbnZpcm9ubWVudDwvdGV4dD4KICA8cmVjdCB4PSI4IiB5PSI3OCIgd2lkdGg9Ijc0IiBoZWlnaHQ9IjMyIiByeD0iMiIgZmlsbD0iIzJjN2E3YiIgb3BhY2l0eT0iMC4xMiIvPgogIDx0ZXh0IHg9IjQ1IiB5PSI5OCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNyIgZmlsbD0iIzJjN2E3YiIgCiAgICAgICAgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9ImJvbGQiPk5VQ0xFQVIgUEhZU0lDUzwvdGV4dD4KPC9zdmc+" alt="Atmospheric Environment" class="rec-cover">
+          <div class="rec-info">
+            <div class="rec-meta"><span class="rec-num">P30</span><span class="rec-year">2024</span><span class="rec-authors">Stoulos et al.</span></div>
+            <div class="rec-title">¹³⁷Cs in outdoor air due to Chernobyl-contaminated wood combustion for residential heating in Thessaloniki</div>
+            <div class="rec-journal">Atmospheric Environment</div>
+          </div>
+        </a>
+        <a href="https://doi.org/10.1140/epja/s10050-024-01413-4" target="_blank" class="rec-item">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MCIgaGVpZ2h0PSIxMjAiIHZpZXdCb3g9IjAgMCA5MCAxMjAiPgogIDxyZWN0IHdpZHRoPSI5MCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiNGMEZGRjQiLz4KICA8cmVjdCB3aWR0aD0iOTAiIGhlaWdodD0iMzIiIGZpbGw9IiMxYTZlM2MiLz4KICA8dGV4dCB4PSI0NSIgeT0iMjEiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iYm9sZCIgCiAgICAgICAgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkV1ci4gUGh5cy4gSi4gQTwvdGV4dD4KICA8bGluZSB4MT0iMCIgeTE9IjMyIiB4Mj0iOTAiIHkyPSIzMiIgc3Ryb2tlPSIjMWE2ZTNjIiBzdHJva2Utd2lkdGg9IjEiLz4KICA8dGV4dCB4PSI0NSIgeT0iNTgiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjUuNSIgZmlsbD0iIzMzMyIgCiAgICAgICAgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSI+RXVyb3BlYW4gUGh5c2ljYWw8L3RleHQ+CiAgPHRleHQgeD0iNDUiIHk9IjY3IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSI1LjUiIGZpbGw9IiMzMzMiIAogICAgICAgIHRleHQtYW5jaG9yPSJtaWRkbGUiPkpvdXJuYWwgQTwvdGV4dD4KICA8cmVjdCB4PSI4IiB5PSI3OCIgd2lkdGg9Ijc0IiBoZWlnaHQ9IjMyIiByeD0iMiIgZmlsbD0iIzFhNmUzYyIgb3BhY2l0eT0iMC4xMiIvPgogIDx0ZXh0IHg9IjQ1IiB5PSI5OCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNyIgZmlsbD0iIzFhNmUzYyIgCiAgICAgICAgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9ImJvbGQiPk5VQ0xFQVIgUEhZU0lDUzwvdGV4dD4KPC9zdmc+" alt="European Physical Journal A" class="rec-cover">
+          <div class="rec-info">
+            <div class="rec-meta"><span class="rec-num">P29</span><span class="rec-year">2024</span><span class="rec-authors">Vagena et al.</span></div>
+            <div class="rec-title">Neutron capture cross-section of p-nucleus ⁷⁴Se in the keV region using the activation method</div>
+            <div class="rec-journal">European Physical Journal A</div>
+          </div>
+        </a>
+        <a href="https://doi.org/10.1016/j.nima.2024.169649" target="_blank" class="rec-item">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MCIgaGVpZ2h0PSIxMjAiIHZpZXdCb3g9IjAgMCA5MCAxMjAiPgogIDxyZWN0IHdpZHRoPSI5MCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiNGMEY0RkYiLz4KICA8cmVjdCB3aWR0aD0iOTAiIGhlaWdodD0iMzIiIGZpbGw9IiMwMDMwODciLz4KICA8dGV4dCB4PSI0NSIgeT0iMjEiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iYm9sZCIgCiAgICAgICAgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk5JTSBBPC90ZXh0PgogIDxsaW5lIHgxPSIwIiB5MT0iMzIiIHgyPSI5MCIgeTI9IjMyIiBzdHJva2U9IiMwMDMwODciIHN0cm9rZS13aWR0aD0iMSIvPgogIDx0ZXh0IHg9IjQ1IiB5PSI1OCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNS41IiBmaWxsPSIjMzMzIiAKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5OdWNsZWFyIEluc3RydW1lbnRzPC90ZXh0PgogIDx0ZXh0IHg9IjQ1IiB5PSI2NyIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNS41IiBmaWxsPSIjMzMzIiAKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIj4mIE1ldGhvZHMgQTwvdGV4dD4KICA8cmVjdCB4PSI4IiB5PSI3OCIgd2lkdGg9Ijc0IiBoZWlnaHQ9IjMyIiByeD0iMiIgZmlsbD0iIzAwMzA4NyIgb3BhY2l0eT0iMC4xMiIvPgogIDx0ZXh0IHg9IjQ1IiB5PSI5OCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNyIgZmlsbD0iIzAwMzA4NyIgCiAgICAgICAgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9ImJvbGQiPk5VQ0xFQVIgUEhZU0lDUzwvdGV4dD4KPC9zdmc+" alt="Nuclear Instruments and Methods A" class="rec-cover">
+          <div class="rec-info">
+            <div class="rec-meta"><span class="rec-num">P28</span><span class="rec-year">2024</span><span class="rec-authors">Perkowski et al.</span></div>
+            <div class="rec-title">Multi-section fission ionisation chamber for measurement of ²³⁹Pu(n,γ) reaction in fission tagging method</div>
+            <div class="rec-journal">Nuclear Instruments and Methods A</div>
+          </div>
+        </a>
+        <a href="https://doi.org/10.1103/PhysRevC.110.015803" target="_blank" class="rec-item">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MCIgaGVpZ2h0PSIxMjAiIHZpZXdCb3g9IjAgMCA5MCAxMjAiPgogIDxyZWN0IHdpZHRoPSI5MCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiNGRkY4RjgiLz4KICA8cmVjdCB3aWR0aD0iOTAiIGhlaWdodD0iMzIiIGZpbGw9IiM4QjAwMDAiLz4KICA8dGV4dCB4PSI0NSIgeT0iMjEiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iYm9sZCIgCiAgICAgICAgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlBoeXMuIFJldi4gQzwvdGV4dD4KICA8bGluZSB4MT0iMCIgeTE9IjMyIiB4Mj0iOTAiIHkyPSIzMiIgc3Ryb2tlPSIjOEIwMDAwIiBzdHJva2Utd2lkdGg9IjEiLz4KICA8dGV4dCB4PSI0NSIgeT0iNTgiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjUuNSIgZmlsbD0iIzMzMyIgCiAgICAgICAgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSI+UGh5c2ljYWw8L3RleHQ+CiAgPHRleHQgeD0iNDUiIHk9IjY3IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSI1LjUiIGZpbGw9IiMzMzMiIAogICAgICAgIHRleHQtYW5jaG9yPSJtaWRkbGUiPlJldmlldyBDPC90ZXh0PgogIDxyZWN0IHg9IjgiIHk9Ijc4IiB3aWR0aD0iNzQiIGhlaWdodD0iMzIiIHJ4PSIyIiBmaWxsPSIjOEIwMDAwIiBvcGFjaXR5PSIwLjEyIi8+CiAgPHRleHQgeD0iNDUiIHk9Ijk4IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSI3IiBmaWxsPSIjOEIwMDAwIiAKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iYm9sZCI+TlVDTEVBUiBQSFlTSUNTPC90ZXh0Pgo8L3N2Zz4=" alt="Physical Review C" class="rec-cover">
+          <div class="rec-info">
+            <div class="rec-meta"><span class="rec-num">P27</span><span class="rec-year">2024</span><span class="rec-authors">Harissopulos et al.</span></div>
+            <div class="rec-title">(p,γ) cross section measurements on Sn isotopes relevant to the p process</div>
+            <div class="rec-journal">Physical Review C</div>
+          </div>
+        </a>
+        <a href="https://doi.org/10.1016/j.nima.2024.169385" target="_blank" class="rec-item">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MCIgaGVpZ2h0PSIxMjAiIHZpZXdCb3g9IjAgMCA5MCAxMjAiPgogIDxyZWN0IHdpZHRoPSI5MCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiNGMEY0RkYiLz4KICA8cmVjdCB3aWR0aD0iOTAiIGhlaWdodD0iMzIiIGZpbGw9IiMwMDMwODciLz4KICA8dGV4dCB4PSI0NSIgeT0iMjEiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iYm9sZCIgCiAgICAgICAgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk5JTSBBPC90ZXh0PgogIDxsaW5lIHgxPSIwIiB5MT0iMzIiIHgyPSI5MCIgeTI9IjMyIiBzdHJva2U9IiMwMDMwODciIHN0cm9rZS13aWR0aD0iMSIvPgogIDx0ZXh0IHg9IjQ1IiB5PSI1OCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNS41IiBmaWxsPSIjMzMzIiAKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5OdWNsZWFyIEluc3RydW1lbnRzPC90ZXh0PgogIDx0ZXh0IHg9IjQ1IiB5PSI2NyIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNS41IiBmaWxsPSIjMzMzIiAKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIj4mIE1ldGhvZHMgQTwvdGV4dD4KICA8cmVjdCB4PSI4IiB5PSI3OCIgd2lkdGg9Ijc0IiBoZWlnaHQ9IjMyIiByeD0iMiIgZmlsbD0iIzAwMzA4NyIgb3BhY2l0eT0iMC4xMiIvPgogIDx0ZXh0IHg9IjQ1IiB5PSI5OCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNyIgZmlsbD0iIzAwMzA4NyIgCiAgICAgICAgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9ImJvbGQiPk5VQ0xFQVIgUEhZU0lDUzwvdGV4dD4KPC9zdmc+" alt="Nuclear Instruments and Methods A" class="rec-cover">
+          <div class="rec-info">
+            <div class="rec-meta"><span class="rec-num">P26</span><span class="rec-year">2024</span><span class="rec-authors">Balibrea-Correa et al.</span></div>
+            <div class="rec-title">Pushing the high count rate limits of scintillation detectors for challenging neutron-capture experiments</div>
+            <div class="rec-journal">Nuclear Instruments and Methods A</div>
+          </div>
+        </a>
+        <a href="https://doi.org/10.1016/j.radphyschem.2024.111525" target="_blank" class="rec-item">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MCIgaGVpZ2h0PSIxMjAiIHZpZXdCb3g9IjAgMCA5MCAxMjAiPgogIDxyZWN0IHdpZHRoPSI5MCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiNGRkY4RjAiLz4KICA8cmVjdCB3aWR0aD0iOTAiIGhlaWdodD0iMzIiIGZpbGw9IiNiMzVjMDAiLz4KICA8dGV4dCB4PSI0NSIgeT0iMjEiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iYm9sZCIgCiAgICAgICAgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlJhZC4gUGh5cy4gQ2hlbS48L3RleHQ+CiAgPGxpbmUgeDE9IjAiIHkxPSIzMiIgeDI9IjkwIiB5Mj0iMzIiIHN0cm9rZT0iI2IzNWMwMCIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgPHRleHQgeD0iNDUiIHk9IjU4IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSI1LjUiIGZpbGw9IiMzMzMiIAogICAgICAgIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPlJhZGlhdGlvbiBQaHlzaWNzPC90ZXh0PgogIDx0ZXh0IHg9IjQ1IiB5PSI2NyIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNS41IiBmaWxsPSIjMzMzIiAKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5hbmQgQ2hlbWlzdHJ5PC90ZXh0PgogIDxyZWN0IHg9IjgiIHk9Ijc4IiB3aWR0aD0iNzQiIGhlaWdodD0iMzIiIHJ4PSIyIiBmaWxsPSIjYjM1YzAwIiBvcGFjaXR5PSIwLjEyIi8+CiAgPHRleHQgeD0iNDUiIHk9Ijk4IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSI3IiBmaWxsPSIjYjM1YzAwIiAKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iYm9sZCI+TlVDTEVBUiBQSFlTSUNTPC90ZXh0Pgo8L3N2Zz4=" alt="Radiation Physics and Chemistry" class="rec-cover">
+          <div class="rec-info">
+            <div class="rec-meta"><span class="rec-num">P25</span><span class="rec-year">2024</span><span class="rec-authors">Alcayne et al.</span></div>
+            <div class="rec-title">A Segmented Total Energy Detector (sTED) optimised for (n,γ) cross-section measurements at n_TOF EAR2</div>
+            <div class="rec-journal">Radiation Physics and Chemistry</div>
+          </div>
+        </a>
+        <a href="https://doi.org/10.1140/epja/s10050-022-00876-7" target="_blank" class="rec-item">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MCIgaGVpZ2h0PSIxMjAiIHZpZXdCb3g9IjAgMCA5MCAxMjAiPgogIDxyZWN0IHdpZHRoPSI5MCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiNGMEZGRjQiLz4KICA8cmVjdCB3aWR0aD0iOTAiIGhlaWdodD0iMzIiIGZpbGw9IiMxYTZlM2MiLz4KICA8dGV4dCB4PSI0NSIgeT0iMjEiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iYm9sZCIgCiAgICAgICAgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkV1ci4gUGh5cy4gSi4gQTwvdGV4dD4KICA8bGluZSB4MT0iMCIgeTE9IjMyIiB4Mj0iOTAiIHkyPSIzMiIgc3Ryb2tlPSIjMWE2ZTNjIiBzdHJva2Utd2lkdGg9IjEiLz4KICA8dGV4dCB4PSI0NSIgeT0iNTgiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjUuNSIgZmlsbD0iIzMzMyIgCiAgICAgICAgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSI+RXVyb3BlYW4gUGh5c2ljYWw8L3RleHQ+CiAgPHRleHQgeD0iNDUiIHk9IjY3IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSI1LjUiIGZpbGw9IiMzMzMiIAogICAgICAgIHRleHQtYW5jaG9yPSJtaWRkbGUiPkpvdXJuYWwgQTwvdGV4dD4KICA8cmVjdCB4PSI4IiB5PSI3OCIgd2lkdGg9Ijc0IiBoZWlnaHQ9IjMyIiByeD0iMiIgZmlsbD0iIzFhNmUzYyIgb3BhY2l0eT0iMC4xMiIvPgogIDx0ZXh0IHg9IjQ1IiB5PSI5OCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNyIgZmlsbD0iIzFhNmUzYyIgCiAgICAgICAgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9ImJvbGQiPk5VQ0xFQVIgUEhZU0lDUzwvdGV4dD4KPC9zdmc+" alt="European Physical Journal A" class="rec-cover">
+          <div class="rec-info">
+            <div class="rec-meta"><span class="rec-num">P24</span><span class="rec-year">2023</span><span class="rec-authors">Domingo-Pardo et al.</span></div>
+            <div class="rec-title">Advances and new ideas for neutron-capture astrophysics experiments at CERN n_TOF</div>
+            <div class="rec-journal">European Physical Journal A</div>
+          </div>
+        </a>
+        <a href="https://doi.org/10.1103/PhysRevC.104.025804" target="_blank" class="rec-item">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MCIgaGVpZ2h0PSIxMjAiIHZpZXdCb3g9IjAgMCA5MCAxMjAiPgogIDxyZWN0IHdpZHRoPSI5MCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiNGRkY4RjgiLz4KICA8cmVjdCB3aWR0aD0iOTAiIGhlaWdodD0iMzIiIGZpbGw9IiM4QjAwMDAiLz4KICA8dGV4dCB4PSI0NSIgeT0iMjEiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iYm9sZCIgCiAgICAgICAgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlBoeXMuIFJldi4gQzwvdGV4dD4KICA8bGluZSB4MT0iMCIgeTE9IjMyIiB4Mj0iOTAiIHkyPSIzMiIgc3Ryb2tlPSIjOEIwMDAwIiBzdHJva2Utd2lkdGg9IjEiLz4KICA8dGV4dCB4PSI0NSIgeT0iNTgiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjUuNSIgZmlsbD0iIzMzMyIgCiAgICAgICAgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSI+UGh5c2ljYWw8L3RleHQ+CiAgPHRleHQgeD0iNDUiIHk9IjY3IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSI1LjUiIGZpbGw9IiMzMzMiIAogICAgICAgIHRleHQtYW5jaG9yPSJtaWRkbGUiPlJldmlldyBDPC90ZXh0PgogIDxyZWN0IHg9IjgiIHk9Ijc4IiB3aWR0aD0iNzQiIGhlaWdodD0iMzIiIHJ4PSIyIiBmaWxsPSIjOEIwMDAwIiBvcGFjaXR5PSIwLjEyIi8+CiAgPHRleHQgeD0iNDUiIHk9Ijk4IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSI3IiBmaWxsPSIjOEIwMDAwIiAKICAgICAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iYm9sZCI+TlVDTEVBUiBQSFlTSUNTPC90ZXh0Pgo8L3N2Zz4=" alt="Physical Review C" class="rec-cover">
+          <div class="rec-info">
+            <div class="rec-meta"><span class="rec-num">P23</span><span class="rec-year">2021</span><span class="rec-authors">Harissopulos et al.</span></div>
+            <div class="rec-title">Cross section measurements of proton capture reactions on Sr isotopes for astrophysics applications</div>
+            <div class="rec-journal">Physical Review C</div>
+          </div>
+        </a>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
