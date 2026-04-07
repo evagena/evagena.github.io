@@ -17,6 +17,16 @@ body {
   line-height: 1.9;
 }
 
+/* ===== GLOBAL ALIGNMENT (🔥 ΤΟ ΚΛΕΙΔΙ) ===== */
+.container,
+.full-inner,
+.nav-inner {
+  max-width: 1250px;
+  margin: auto;
+  padding-left: 80px;
+  padding-right: 40px;
+}
+
 /* ===== NAVBAR ===== */
 .navbar {
   position: sticky;
@@ -27,11 +37,10 @@ body {
 }
 
 .nav-inner {
-  max-width: 1250px;
-  margin: auto;
-  padding: 20px 60px;   /* 🔥 ALIGN με content */
   display: flex;
   gap: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .navbar a {
@@ -46,9 +55,7 @@ body {
 
 /* ===== ABOUT ===== */
 .container {
-  max-width: 1250px;
-  margin: 90px auto;
-  padding: 0 60px;   /* 🔥 ΙΔΙΟ με navbar */
+  margin-top: 90px;
   display: grid;
   grid-template-columns: 400px 1fr;
   gap: 100px;
@@ -66,7 +73,6 @@ body {
 
 .left h1 {
   font-size: 46px;
-  margin: 25px 0 12px;
   font-weight: 200;
 }
 
@@ -76,7 +82,6 @@ body {
 }
 
 .uni {
-  margin-top: 12px;
   color: #2d6cdf;
   font-size: 18px;
 }
@@ -99,24 +104,17 @@ body {
   padding: 120px 0;
 }
 
-.full-inner {
-  max-width: 1250px;
-  margin: auto;
-  padding: 0 60px;   /* 🔥 SAME ALIGNMENT */
-}
-
 /* ===== GRID ===== */
 .full-grid {
   display: grid;
   grid-template-columns: 260px 1fr;
-  gap: 120px;
+  gap: 100px;
 }
 
 /* ===== TITLES ===== */
 .full-left h2 {
-  font-size: 48px;
+  font-size: 46px;
   font-weight: 300;
-  line-height: 1.2;
 }
 
 /* ===== TEXT ===== */
@@ -130,7 +128,7 @@ body {
 
 /* ===== JOB ===== */
 .job {
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
 
 .year {
@@ -176,15 +174,15 @@ body {
   <h2>About me</h2>
 
   <p>
-    I hold a PhD in Nuclear Physics from the Department of Physics at Aristotle University of Thessaloniki...
+    I hold a PhD in Nuclear Physics from the Department of Physics at Aristotle University of Thessaloniki, with research activity focused on the experimental and computational study of nuclear reactions, nuclear data evaluation, and applications of nuclear physics in astrophysics, space science, and medical physics.
   </p>
 
   <p>
-    I have worked as a postdoctoral researcher at NCSR Demokritos, AUTH, Culham, LAPP, CERN...
+    I have worked as a postdoctoral researcher at the Institute of Nuclear and Particle Physics of NCSR Demokritos, Aristotle University of Thessaloniki, Culham Centre for Fusion Energy (UK), LAPP (France), and CERN (ISOLDE and n-TOF collaboration). I also collaborate with the International Atomic Energy Agency (IAEA).
   </p>
 
   <p>
-    My research includes nuclear reaction experiments, R-matrix calculations, and Monte Carlo simulations.
+    My research includes nuclear reaction experiments, cross section evaluation, R-matrix calculations, and Monte Carlo simulations using Geant4.
   </p>
 
 </div>
@@ -239,15 +237,17 @@ body {
 
         <p>
           Currently, I contribute to postgraduate teaching in Radiation Physics,
-          Dosimetry, and Monte Carlo simulations.
+          Dosimetry, and Monte Carlo simulations, with emphasis on Geant4-based
+          modelling and nuclear applications.
         </p>
 
         <ul>
           <li>Radiation Physics and Dosimetry</li>
           <li>Monte Carlo simulations (Geant4)</li>
           <li>Nuclear reaction modelling</li>
-          <li>Detector physics</li>
+          <li>Detector physics and instrumentation</li>
           <li>Astrophysical nuclear processes</li>
+          <li>R-matrix methods</li>
         </ul>
 
       </div>
@@ -257,12 +257,6 @@ body {
   </div>
 
 </div>
-
-</body>
-</html>
-
-
-
 
 </body>
 </html>
