@@ -141,6 +141,22 @@ body {
   font-size: 20px;
 }
 
+.navbar {
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1000;
+}
+
+.nav-inner {
+  max-width: 1250px;
+  margin: auto;
+  padding: 20px 0;        /* όχι left padding */
+  display: flex;
+  gap: 40px;
+}
+
 </style>
 
 </head>
@@ -149,10 +165,12 @@ body {
 
 <!-- NAVBAR -->
 <div class="navbar">
-  <a href="#about">About me</a>
-  <a href="#teaching">Teaching</a>
-  <a href="#publications">Publications</a>
-  <a href="#research">Research Topics</a>
+  <div class="nav-inner">
+    <a href="#about">About me</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#publications">Publications</a>
+    <a href="#research">Research Topics</a>
+  </div>
 </div>
 
 <!-- ABOUT -->
